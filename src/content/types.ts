@@ -97,11 +97,22 @@ export interface SiteConfig {
     linkedin?: string;
     facebook?: string;
   };
+  contact?: ContactContent;
   aboutStory: {
     eyebrow: string;
     heading: string;
     body: string;
   };
+}
+
+export interface ContactContent {
+  sectionHeading: string;
+  sectionIntro: string;
+  headquartersLabel: string;
+  officeAddressLabel: string;
+  channelFallback: string;
+  appointmentNote: string;
+  status: 'proposed';
 }
 
 export interface NavLink {

@@ -1,5 +1,20 @@
 import { TBC } from '@/lib/tbc';
-import type { SiteConfig } from './types';
+import type { SiteConfig, ContactContent } from './types';
+
+/**
+ * Proposed copy for the /contact page, awaiting formal client sign-off.
+ * Replaces component-local hard-coded strings.
+ */
+export const contactContent: ContactContent = {
+  sectionHeading: 'Direct Advisory & Inquiries',
+  sectionIntro:
+    'Wisdom Career Education was established in Nashik, Maharashtra in 2008. We provide 1-on-1 profile evaluations and guidance sessions for students across India.',
+  headquartersLabel: 'Headquarters',
+  officeAddressLabel: 'Office Address',
+  channelFallback: 'Available via enquiry form',
+  appointmentNote: 'In-person sessions and office meetings arranged by appointment.',
+  status: 'proposed',
+};
 
 export const siteConfig: SiteConfig = {
   brandName: 'Wisdom Career Education',
@@ -25,6 +40,7 @@ export const siteConfig: SiteConfig = {
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || undefined,
     facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || undefined,
   },
+  contact: contactContent,
   aboutStory: {
     eyebrow: 'About WCE',
     heading: '15+ years of turning ambition into careers',

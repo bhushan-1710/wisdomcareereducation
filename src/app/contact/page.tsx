@@ -4,7 +4,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { InnerHero } from '@/components/layout/InnerHero';
 import { EnquiryForm } from '@/components/forms/EnquiryForm';
 import { Container } from '@/components/ui/Container';
-import { siteConfig } from '@/content/site';
+import { siteConfig, contactContent } from '@/content/site';
 import { constructMetadata } from '@/lib/seo';
 import { hasValue, TbcBadge } from '@/lib/tbc';
 import { MapPin, Phone, Mail, MessageSquare, Clock } from 'lucide-react';
@@ -41,10 +41,10 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-8">
               <div>
                 <h2 className="text-[26px] sm:text-[30px] font-bold text-wce-navy-900 tracking-tight mb-3">
-                  Direct Advisory & Inquiries
+                  {contactContent.sectionHeading}
                 </h2>
                 <p className="text-[16px] text-wce-slate-600 leading-relaxed">
-                  Wisdom Career Education was established in Nashik, Maharashtra in 2008. We provide 1-on-1 profile evaluations and guidance sessions for students across India.
+                  {contactContent.sectionIntro}
                 </p>
               </div>
 
@@ -57,7 +57,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <strong className="block text-sm font-bold text-wce-navy-900">
-                      {hasAddressFull ? 'Office Address' : 'Headquarters'}
+                      {hasAddressFull ? contactContent.officeAddressLabel : contactContent.headquartersLabel}
                     </strong>
                     {hasAddressFull ? (
                       <p className="text-sm text-wce-slate-600">{siteConfig.address.fullText as string}</p>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                           </div>
                         ) : (
                           <p className="text-xs text-wce-slate-500 mt-1">
-                            In-person sessions and office meetings arranged by appointment.
+                            {contactContent.appointmentNote}
                           </p>
                         )}
                       </>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                       </a>
                     ) : (
                       <div className="mt-0.5">
-                        <span className="text-sm text-wce-slate-500">Available via enquiry form</span>
+                        <span className="text-sm text-wce-slate-500">{contactContent.channelFallback}</span>
                         {!isProd && <TbcBadge label="TBC" context="phone number (Q3)" className="ml-2" />}
                       </div>
                     )}
@@ -114,7 +114,7 @@ export default function ContactPage() {
                       <span className="text-sm text-wce-slate-600">{siteConfig.whatsappNumber as string}</span>
                     ) : (
                       <div className="mt-0.5">
-                        <span className="text-sm text-wce-slate-500">Available via enquiry form</span>
+                        <span className="text-sm text-wce-slate-500">{contactContent.channelFallback}</span>
                         {!isProd && <TbcBadge label="TBC" context="WhatsApp number (Q3)" className="ml-2" />}
                       </div>
                     )}
@@ -137,7 +137,7 @@ export default function ContactPage() {
                       </a>
                     ) : (
                       <div className="mt-0.5">
-                        <span className="text-sm text-wce-slate-500">Available via enquiry form</span>
+                        <span className="text-sm text-wce-slate-500">{contactContent.channelFallback}</span>
                         {!isProd && <TbcBadge label="TBC" context="email address (Q3)" className="ml-2" />}
                       </div>
                     )}
