@@ -6,14 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "check:tbc": "node scripts/check-tbc.mjs",
+    "shots": "playwright test tests/shots.spec.ts --project=desktop-1440",
+    "test:a11y": "playwright test tests/a11y.spec.ts --project=desktop-1440",
+    "lh": "node scripts/lh.mjs"
   },
   "dependencies": {
+    "lucide-react": "^1.52.0",
     "next": "16.3.8",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
