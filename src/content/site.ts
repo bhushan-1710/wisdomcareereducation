@@ -13,6 +13,7 @@ export const siteConfig: SiteConfig = {
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || TBC,
   whatsappPrefilledText: "Hi WCE, I'd like to know more about your programs.",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || TBC,
+  hours: process.env.NEXT_PUBLIC_OFFICE_HOURS || TBC,
   address: {
     city: 'Nashik',
     state: 'Maharashtra',

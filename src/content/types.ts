@@ -90,6 +90,7 @@ export interface SiteConfig {
   whatsappNumber: Maybe<string>;
   whatsappPrefilledText: string;
   email: Maybe<string>;
+  hours?: Maybe<string>;
   address: SiteAddress;
   socialLinks: {
     instagram?: string;
