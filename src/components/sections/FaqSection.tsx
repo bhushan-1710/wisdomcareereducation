@@ -33,21 +33,23 @@ export function FaqSection() {
   }));
 
   return (
-    <section className="py-20 md:py-28 bg-wce-blue-50/60" id="faq">
+    <section className="py-28 md:py-36 bg-wce-blue-50/60" id="faq">
       <Container>
-        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
           <Eyebrow>Got questions?</Eyebrow>
-          <h2 className="text-[32px] md:text-[40px] font-bold text-wce-navy-900 tracking-tight mt-2">
+          <h2 className="text-[32px] md:text-[44px] font-bold text-wce-navy-900 tracking-tight mt-2.5">
             Frequently asked questions
           </h2>
-          <p className="mt-3 text-[16px] text-wce-slate-600">
+          <p className="mt-4 text-[16px] md:text-[17px] text-wce-slate-600 leading-relaxed">
             Answers to common questions about eligibility, visas, and counselling.
           </p>
         </div>
 
-        <Accordion items={accordionItems} defaultOpenId={itemsToRender[0]?.id} />
+        <div className="max-w-[760px] mx-auto">
+          <Accordion items={accordionItems} defaultOpenId={itemsToRender[0]?.id} />
+        </div>
 
-        <div className="mt-10 text-center text-[14px] text-wce-slate-600">
+        <div className="mt-12 text-center text-[15px] text-wce-slate-600">
           Have a question not listed here?{' '}
           <a href="#enquiry-form" className="font-semibold text-wce-coral-700 hover:underline">
             Ask our counselling team directly &rarr;

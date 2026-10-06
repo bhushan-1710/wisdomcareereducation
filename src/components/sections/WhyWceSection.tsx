@@ -7,84 +7,85 @@ import { hasValue, TbcBadge } from '@/lib/tbc';
 
 export function WhyWceSection() {
   return (
-    <section className="py-20 md:py-28 bg-wce-white" id="why-wce">
+    <section className="py-24 md:py-36 bg-wce-white" id="why-wce">
       <Container>
-        <div className="max-w-2xl mb-16 md:mb-20">
+        {/* Section Heading */}
+        <div className="max-w-2xl mb-20 md:mb-28">
           <Eyebrow>{whyIntro.eyebrow}</Eyebrow>
-          <h2 className="text-[32px] md:text-[42px] font-bold text-wce-navy-900 tracking-tight mt-2">
+          <h2 className="text-[32px] md:text-[44px] font-bold text-wce-navy-900 tracking-tight mt-2.5">
             {whyIntro.heading}
           </h2>
-          <p className="mt-3 text-[16px] md:text-[17px] text-wce-slate-600 leading-relaxed">
+          <p className="mt-4 text-[16px] md:text-[18px] text-wce-slate-600 leading-relaxed">
             {whyIntro.subheading}
           </p>
         </div>
 
-        {/* Staggered / Asymmetric 2-column layout on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
-          {/* Left Column: Card 1 & Card 3 */}
-          <div className="space-y-8 lg:space-y-12">
-            {/* Card 1: Personal counselling */}
-            <div className="group rounded-[24px] bg-wce-blue-50/50 p-8 lg:p-10 border border-wce-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-[16px] bg-wce-white p-3 shadow-sm mb-6 flex items-center justify-center transition-transform duration-200 group-hover:scale-105 border border-wce-blue-100">
+        {/* Asymmetric / Staggered Editorial Feature Layout (≥768px) - No heavy boxed card envelopes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-start">
+          {/* Left Column: Feature 1 & Feature 3 */}
+          <div className="space-y-16 lg:space-y-24">
+            {/* Feature 1: Personal counselling */}
+            <div className="group">
+              <div className="h-20 w-20 rounded-[22px] bg-wce-blue-50 p-3.5 mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <Illustration id={whyFeatures[0].art} className="w-full h-full object-contain" />
               </div>
-              <h3 className="text-[22px] font-bold text-wce-navy-900 tracking-tight mb-3">
+              <h3 className="text-[23px] lg:text-[25px] font-bold text-wce-navy-900 tracking-tight mb-3">
                 {whyFeatures[0].title}
               </h3>
               {hasValue(whyFeatures[0].description) && (
-                <p className="text-[15px] text-wce-slate-600 leading-relaxed">
+                <p className="text-[15px] lg:text-[16px] text-wce-slate-600 leading-relaxed max-w-md">
                   {whyFeatures[0].description}
                 </p>
               )}
             </div>
 
-            {/* Card 3: Global network (staggered offset) */}
-            <div className="group rounded-[24px] bg-wce-white p-8 lg:p-10 border border-wce-slate-200/90 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-[16px] bg-wce-blue-50 p-3 shadow-sm mb-6 flex items-center justify-center transition-transform duration-200 group-hover:scale-105 border border-wce-blue-100">
+            {/* Feature 3: Global network */}
+            <div className="group pt-6 md:pt-10 border-t border-wce-slate-200/60">
+              <div className="h-20 w-20 rounded-[22px] bg-wce-blue-50 p-3.5 mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <Illustration id={whyFeatures[2].art} className="w-full h-full object-contain" />
               </div>
-              <h3 className="text-[22px] font-bold text-wce-navy-900 tracking-tight mb-3">
+              <h3 className="text-[23px] lg:text-[25px] font-bold text-wce-navy-900 tracking-tight mb-3">
                 {whyFeatures[2].title}
               </h3>
               {hasValue(whyFeatures[2].description) && (
-                <p className="text-[15px] text-wce-slate-600 leading-relaxed">
+                <p className="text-[15px] lg:text-[16px] text-wce-slate-600 leading-relaxed max-w-md">
                   {whyFeatures[2].description}
                 </p>
               )}
             </div>
           </div>
 
-          {/* Right Column: Card 2 (down-shifted) & Card 4 */}
-          <div className="space-y-8 lg:space-y-12 md:pt-10 lg:pt-14">
-            {/* Card 2: Visa and document support */}
-            <div className="group rounded-[24px] bg-wce-white p-8 lg:p-10 border border-wce-slate-200/90 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-[16px] bg-wce-coral-50 p-3 shadow-sm mb-6 flex items-center justify-center transition-transform duration-200 group-hover:scale-105 border border-wce-coral-100">
+          {/* Right Column: Feature 2 (Offset down) & Feature 4 */}
+          <div className="space-y-16 lg:space-y-24 md:pt-16 lg:pt-24">
+            {/* Feature 2: Visa and document support */}
+            <div className="group">
+              <div className="h-20 w-20 rounded-[22px] bg-wce-coral-50 p-3.5 mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <Illustration id={whyFeatures[1].art} className="w-full h-full object-contain" />
               </div>
-              <h3 className="text-[22px] font-bold text-wce-navy-900 tracking-tight mb-3">
+              <h3 className="text-[23px] lg:text-[25px] font-bold text-wce-navy-900 tracking-tight mb-3">
                 {whyFeatures[1].title}
               </h3>
               {hasValue(whyFeatures[1].description) && (
-                <p className="text-[15px] text-wce-slate-600 leading-relaxed">
+                <p className="text-[15px] lg:text-[16px] text-wce-slate-600 leading-relaxed max-w-md">
                   {whyFeatures[1].description}
                 </p>
               )}
             </div>
 
-            {/* Card 4: Support after placement */}
-            <div className="group rounded-[24px] bg-wce-blue-50/50 p-8 lg:p-10 border border-wce-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-[16px] bg-wce-white p-3 shadow-sm mb-6 flex items-center justify-center transition-transform duration-200 group-hover:scale-105 border border-wce-blue-100">
+            {/* Feature 4: Support after placement */}
+            <div className="group pt-6 md:pt-10 border-t border-wce-slate-200/60">
+              <div className="h-20 w-20 rounded-[22px] bg-wce-blue-50 p-3.5 mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <Illustration id={whyFeatures[3].art} className="w-full h-full object-contain" />
               </div>
-              <h3 className="text-[22px] font-bold text-wce-navy-900 tracking-tight mb-3">
+              <h3 className="text-[23px] lg:text-[25px] font-bold text-wce-navy-900 tracking-tight mb-3">
                 {whyFeatures[3].title}
               </h3>
               {hasValue(whyFeatures[3].description) ? (
-                <p className="text-[15px] text-wce-slate-600 leading-relaxed">
+                <p className="text-[15px] lg:text-[16px] text-wce-slate-600 leading-relaxed max-w-md">
                   {whyFeatures[3].description}
                 </p>
               ) : (
-                <div className="mt-1">
+                <div className="mt-2">
                   <TbcBadge label="TBC" context="client confirmation (Q11)" />
                 </div>
               )}
