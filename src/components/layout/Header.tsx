@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, Send } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { siteConfig, navConfig } from '@/content';
 import { MobileMenu } from './MobileMenu';
 
 export interface HeaderProps {
@@ -25,15 +26,6 @@ export function Header({ className = '', whatsappNumber }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'Programs', href: '/programs' },
-    { label: 'Study Abroad', href: '/programs/study-abroad' },
-    { label: 'Internships', href: '/programs/student-internships' },
-    { label: 'Success Stories', href: '/success-stories' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-  ];
-
   return (
     <>
       <header
@@ -48,14 +40,14 @@ export function Header({ className = '', whatsappNumber }: HeaderProps) {
           <Link
             href="/"
             className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-wce-blue-500 rounded-lg p-1"
-            aria-label="Wisdom Career Education Home"
+            aria-label={`${siteConfig.brandName} Home`}
           >
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-wce-navy-900 text-wce-coral-400 group-hover:scale-105 transition-transform duration-160">
               <Send className="h-4 w-4 -rotate-45 translate-x-0.5" />
             </div>
             <div className="flex flex-col">
               <span className="font-heading font-extrabold text-[18px] leading-none text-wce-navy-900 tracking-tight">
-                WCE
+                {siteConfig.shortName}
               </span>
               <span className="text-[11px] font-medium leading-none text-wce-slate-600 tracking-wider uppercase mt-0.5">
                 Wisdom Career
@@ -65,7 +57,7 @@ export function Header({ className = '', whatsappNumber }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-7" aria-label="Main Navigation">
-            {navLinks.map((link) => (
+            {navConfig.links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -80,8 +72,8 @@ export function Header({ className = '', whatsappNumber }: HeaderProps) {
           {/* Desktop CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <div className="hidden sm:block">
-              <Button href="/contact" variant="primary" size="sm">
-                Enquire now
+              <Button href={navConfig.ctaButton.href} variant="primary" size="sm">
+                {navConfig.ctaButton.label}
               </Button>
             </div>
 

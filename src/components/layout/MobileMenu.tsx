@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { X, MessageCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { siteConfig, navConfig } from '@/content';
+import { resolveValue } from '@/lib/tbc';
 
 export interface MobileMenuProps {
   isOpen: boolean;
@@ -14,7 +16,7 @@ export interface MobileMenuProps {
 export function MobileMenu({
   isOpen,
   onClose,
-  whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER,
+  whatsappNumber = resolveValue(siteConfig.whatsappNumber) || undefined,
 }: MobileMenuProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const sheetRef = useRef<HTMLDivElement>(null);
@@ -41,15 +43,6 @@ export function MobileMenu({
 
   if (!isOpen) return null;
 
-  const navLinks = [
-    { label: 'Programs', href: '/programs' },
-    { label: 'Study Abroad', href: '/programs/study-abroad' },
-    { label: 'Internships', href: '/programs/student-internships' },
-    { label: 'Success Stories', href: '/success-stories' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-  ];
-
   return (
     <div
       role="dialog"
@@ -64,7 +57,7 @@ export function MobileMenu({
           onClick={onClose}
           className="flex items-center gap-2 text-xl font-bold font-heading text-wce-white"
         >
-          <span className="text-wce-coral-400">WCE</span>
+          <span className="text-wce-coral-400">{siteConfig.shortName}</span>
           <span className="text-sm font-normal text-wce-slate-300">Wisdom Career</span>
         </Link>
 
@@ -85,7 +78,7 @@ export function MobileMenu({
         className="flex-1 overflow-y-auto px-6 py-8 flex flex-col justify-between"
       >
         <nav className="flex flex-col gap-2" aria-label="Mobile menu links">
-          {navLinks.map((link) => (
+          {navConfig.links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -101,18 +94,18 @@ export function MobileMenu({
         {/* Bottom pinned actions */}
         <div className="pt-8 flex flex-col gap-3">
           <Button
-            href="/contact"
+            href={navConfig.ctaButton.href}
             variant="primary"
             size="lg"
             className="w-full justify-center"
             onClick={onClose}
           >
-            Enquire now
+            {navConfig.ctaButton.label}
           </Button>
 
           {whatsappNumber ? (
             <a
-              href={`https://wa.me/${whatsappNumber}?text=Hi%20WCE%2C%20I'd%20like%20to%20know%20more%20about%20your%20programs.`}
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappPrefilledText)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-wce-navy-700 bg-wce-navy-800 py-3 text-[15px] font-semibold text-wce-white hover:bg-wce-navy-700 transition-colors"

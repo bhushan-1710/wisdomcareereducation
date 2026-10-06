@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { Send, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { siteConfig } from '@/content';
+import { hasValue } from '@/lib/tbc';
 
 export interface FooterProps {
   className?: string;
@@ -30,7 +32,7 @@ export function Footer({ className = '' }: FooterProps) {
                 <Send className="h-4 w-4 -rotate-45 translate-x-0.5" />
               </div>
               <span className="font-heading font-bold text-[20px] text-wce-white">
-                WCE
+                {siteConfig.shortName}
               </span>
             </Link>
 
@@ -41,18 +43,22 @@ export function Footer({ className = '' }: FooterProps) {
             <div className="flex flex-col gap-2.5 pt-2 text-[14px] text-wce-slate-300">
               <div className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-wce-coral-400 mt-1 shrink-0" />
-                <span>Nashik, Maharashtra, India</span>
+                <span>
+                  {siteConfig.address.city}, {siteConfig.address.state}, {siteConfig.address.country}
+                </span>
               </div>
-              {process.env.NEXT_PUBLIC_PHONE_DISPLAY ? (
+              {hasValue(siteConfig.phoneDisplay) && (
                 <div className="flex items-center gap-2.5">
                   <Phone className="h-4 w-4 text-wce-coral-400 shrink-0" />
-                  <span>{process.env.NEXT_PUBLIC_PHONE_DISPLAY}</span>
+                  <span>{siteConfig.phoneDisplay}</span>
                 </div>
-              ) : null}
-              <div className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 text-wce-coral-400 shrink-0" />
-                <span>info@wisdomcareereducation.org</span>
-              </div>
+              )}
+              {hasValue(siteConfig.email) && (
+                <div className="flex items-center gap-2.5">
+                  <Mail className="h-4 w-4 text-wce-coral-400 shrink-0" />
+                  <span>{siteConfig.email}</span>
+                </div>
+              )}
             </div>
           </div>
 
@@ -103,7 +109,7 @@ export function Footer({ className = '' }: FooterProps) {
             <ul className="flex flex-col gap-2.5 text-[14px] text-wce-slate-300">
               <li>
                 <Link href="/programs/study-abroad" className="hover:text-wce-coral-400 transition-colors">
-                  Study Abroad & Admissions
+                  Study Abroad &amp; Admissions
                 </Link>
               </li>
               <li>
@@ -150,16 +156,16 @@ export function Footer({ className = '' }: FooterProps) {
         {/* Bottom Bar & Legal Registration Line */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-wce-slate-300">
           <p className="text-center md:text-left leading-relaxed">
-            Wisdom Career Education Pvt. Ltd. Registered under the Companies Act 1956, Government of India. Established 2008.
+            {siteConfig.legalLine}
           </p>
           <div className="flex items-center gap-6 shrink-0">
             <Link href="/privacy-policy" className="hover:text-wce-coral-400 transition-colors">
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-wce-coral-400 transition-colors">
-              Terms & Conditions
+              Terms &amp; Conditions
             </Link>
-            <span>© {currentYear} WCE</span>
+            <span>© {currentYear} {siteConfig.shortName}</span>
           </div>
         </div>
       </div>

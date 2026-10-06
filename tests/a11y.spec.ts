@@ -24,4 +24,16 @@ test.describe('Accessibility Audits', () => {
 
     expect(accessibilityScanResults.violations).toEqual([]);
   });
+
+  test('Dev content verification page passes axe checks', async ({ page }) => {
+    await page.goto('/dev/content');
+    await page.waitForLoadState('networkidle');
+
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])
+      .disableRules(['region'])
+      .analyze();
+
+    expect(accessibilityScanResults.violations).toEqual([]);
+  });
 });
