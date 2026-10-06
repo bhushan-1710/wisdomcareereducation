@@ -36,4 +36,33 @@ test.describe('Accessibility Audits', () => {
 
     expect(accessibilityScanResults.violations).toEqual([]);
   });
+
+  const innerRoutes = [
+    '/about',
+    '/programs',
+    '/programs/study-abroad',
+    '/sectors',
+    '/destinations',
+    '/destinations/malaysia',
+    '/success-stories',
+    '/csr',
+    '/faq',
+    '/contact',
+    '/privacy-policy',
+    '/terms',
+    '/404',
+  ];
+
+  for (const route of innerRoutes) {
+    test(`Route ${route} passes axe checks`, async ({ page }) => {
+      await page.goto(route);
+      await page.waitForLoadState('networkidle');
+
+      const accessibilityScanResults = await new AxeBuilder({ page })
+        .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])
+        .analyze();
+
+      expect(accessibilityScanResults.violations).toEqual([]);
+    });
+  }
 });
