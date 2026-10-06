@@ -99,6 +99,14 @@
     box-shadow: 0 0 0 3px var(--wce-blue-500);
     outline-offset: 2px;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 /* Base Layer Styles */

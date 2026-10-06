@@ -25,24 +25,36 @@ export function Reveal({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (prefersReduced) return;
+    if (prefersReduced) {
+      return;
+    }
 
     const element = ref.current;
     if (!element) return;
+
+    // Guaranteed fallback reveal so content is never trapped in opacity: 0
+    const fallbackTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, delayMs + 400);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
           observer.unobserve(element);
+          clearTimeout(fallbackTimer);
         }
       },
-      { threshold: 0.05, rootMargin: '100px' }
+      { threshold: 0, rootMargin: '300px' }
     );
 
     observer.observe(element);
-    return () => observer.disconnect();
-  }, [prefersReduced]);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallbackTimer);
+    };
+  }, [prefersReduced, delayMs]);
 
   if (prefersReduced) {
     return <div className={className}>{children}</div>;

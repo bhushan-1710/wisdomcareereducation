@@ -122,12 +122,16 @@ export function Illustration({ id, className = '', alt, priority = false }: Illu
     );
   }
 
+  const devPlaceholderProps =
+    process.env.NODE_ENV !== 'production' ? { 'data-placeholder': id } : {};
+
   // Placeholder renderer per docs/assets-manifest.md Section F
   return (
     <div
       role="img"
       aria-label={effectiveAlt || 'Illustration placeholder'}
-      data-placeholder={id}
+      data-asset-id={id}
+      {...devPlaceholderProps}
       className={`relative flex flex-col items-center justify-center rounded-[var(--radius-card)] border border-dashed border-wce-slate-300 bg-wce-blue-100/50 p-4 text-center transition-all ${className}`}
       style={{
         aspectRatio: `${spec.width} / ${spec.height}`,
