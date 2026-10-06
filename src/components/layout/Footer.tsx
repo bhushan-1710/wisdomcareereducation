@@ -43,10 +43,12 @@ export function Footer({ className = '' }: FooterProps) {
                 <MapPin className="h-4 w-4 text-wce-coral-400 mt-1 shrink-0" />
                 <span>Nashik, Maharashtra, India</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="h-4 w-4 text-wce-coral-400 shrink-0" />
-                <span>+91 (Contact [TBC])</span>
-              </div>
+              {process.env.NEXT_PUBLIC_PHONE_DISPLAY ? (
+                <div className="flex items-center gap-2.5">
+                  <Phone className="h-4 w-4 text-wce-coral-400 shrink-0" />
+                  <span>{process.env.NEXT_PUBLIC_PHONE_DISPLAY}</span>
+                </div>
+              ) : null}
               <div className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 text-wce-coral-400 shrink-0" />
                 <span>info@wisdomcareereducation.org</span>

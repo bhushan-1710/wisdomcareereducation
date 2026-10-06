@@ -14,7 +14,7 @@ export interface MobileMenuProps {
 export function MobileMenu({
   isOpen,
   onClose,
-  whatsappNumber = '919876543210',
+  whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER,
 }: MobileMenuProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const sheetRef = useRef<HTMLDivElement>(null);
@@ -110,15 +110,27 @@ export function MobileMenu({
             Enquire now
           </Button>
 
-          <a
-            href={`https://wa.me/${whatsappNumber}?text=Hi%20WCE%2C%20I'd%20like%20to%20know%20more%20about%20your%20programs.`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-wce-navy-700 bg-wce-navy-800 py-3 text-[15px] font-semibold text-wce-white hover:bg-wce-navy-700 transition-colors"
-          >
-            <MessageCircle className="h-5 w-5 text-wce-green-400" />
-            <span>Chat on WhatsApp</span>
-          </a>
+          {whatsappNumber ? (
+            <a
+              href={`https://wa.me/${whatsappNumber}?text=Hi%20WCE%2C%20I'd%20like%20to%20know%20more%20about%20your%20programs.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-wce-navy-700 bg-wce-navy-800 py-3 text-[15px] font-semibold text-wce-white hover:bg-wce-navy-700 transition-colors"
+            >
+              <MessageCircle className="h-5 w-5 text-wce-green-400" />
+              <span>Chat on WhatsApp</span>
+            </a>
+          ) : process.env.NODE_ENV !== 'production' ? (
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              className="flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-wce-navy-700/50 bg-wce-navy-800/50 py-3 text-[14px] font-medium text-wce-slate-300 opacity-60 cursor-not-allowed"
+            >
+              <MessageCircle className="h-5 w-5 text-wce-slate-400" />
+              <span>Chat on WhatsApp (TBC)</span>
+            </button>
+          ) : null}
         </div>
       </div>
     </div>
