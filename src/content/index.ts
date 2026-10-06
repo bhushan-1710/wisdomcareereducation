@@ -8,3 +8,6 @@ export * from './testimonials';
 export * from './faqs';
 export * from './stats';
 export * from './partners';
+export * from './journey';
+export * from './why';
+export * from './csr';

@@ -132,7 +132,7 @@ export function Illustration({ id, className = '', alt, priority = false }: Illu
       aria-label={effectiveAlt || 'Illustration placeholder'}
       data-asset-id={id}
       {...devPlaceholderProps}
-      className={`relative flex flex-col items-center justify-center rounded-[var(--radius-card)] border border-dashed border-wce-slate-300 bg-wce-blue-100/50 p-4 text-center transition-all ${className}`}
+      className={`relative flex flex-col items-center justify-center rounded-[var(--radius-card)] border border-dashed border-wce-slate-300 bg-wce-blue-50 p-4 text-center transition-all ${className}`}
       style={{
         aspectRatio: `${spec.width} / ${spec.height}`,
         maxWidth: '100%',
@@ -142,7 +142,7 @@ export function Illustration({ id, className = '', alt, priority = false }: Illu
         <span className="inline-flex items-center rounded-full bg-wce-navy-900/10 px-2.5 py-0.5 text-[11px] font-semibold tracking-wider text-wce-navy-900 uppercase">
           {id}
         </span>
-        <span className="text-[12px] font-mono text-wce-slate-600">
+        <span className="text-[12px] font-mono text-wce-ink font-medium">
           {spec.width} × {spec.height}
         </span>
       </div>

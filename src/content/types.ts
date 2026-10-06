@@ -115,3 +115,23 @@ export interface NavConfig {
     href: string;
   };
 }
+
+export interface JourneyStep {
+  step: number;
+  title: string;
+  description: string;
+  art: string;
+}
+
+export interface WhyFeature {
+  id: string;
+  title: string;
+  description: Maybe<string>;
+  art: string;
+}
+
+export interface CsrConfig {
+  heading: string;
+  body: Maybe<string>;
+  art: string;
+}

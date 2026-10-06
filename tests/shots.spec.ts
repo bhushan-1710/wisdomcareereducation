@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-const step = process.env.STEP || 'step-3';
+const step = process.env.STEP || 'step-4';
 const viewports = [
   { name: '360', width: 360, height: 740 },
   { name: '390', width: 390, height: 844 },
@@ -11,7 +11,7 @@ const viewports = [
   { name: '1440', width: 1440, height: 900 },
 ];
 
-test.describe('Responsive Screenshots for Step 3 — Home A', () => {
+test.describe('Responsive Screenshots for Step 4 — Home B', () => {
   for (const vp of viewports) {
     test(`Capture Home (/) at ${vp.name}px`, async ({ page }) => {
       await page.setViewportSize({ width: vp.width, height: vp.height });
