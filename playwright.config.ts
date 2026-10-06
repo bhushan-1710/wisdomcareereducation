@@ -10,7 +10,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'pnpm dev --port 3050',
+    command: 'pnpm.cmd dev --port 3050',
     url: 'http://localhost:3050',
     reuseExistingServer: !process.env.CI,
     timeout: 60000,

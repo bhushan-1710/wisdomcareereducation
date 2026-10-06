@@ -2,9 +2,10 @@ import { test } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-const step = process.env.STEP || 'step-5';
+const step = process.env.STEP || 'step-6';
 
 const keyRoutes = [
+  { slug: 'home', path: '/' },
   { slug: 'about', path: '/about' },
   { slug: 'programs', path: '/programs' },
   { slug: 'program-study-abroad', path: '/programs/study-abroad' },
@@ -32,7 +33,7 @@ test.describe('Responsive Screenshots for Step 5 — Inner Pages', () => {
   for (const route of keyRoutes) {
     for (const vp of viewports) {
       // Prioritize 360, 390, 768, 1440 for all routes; 1024 for key visual hubs
-      if (vp.name === '1024' && !['about', 'programs', 'program-study-abroad', 'sectors', 'contact'].includes(route.slug)) {
+      if (vp.name === '1024' && !['home', 'about', 'programs', 'program-study-abroad', 'sectors', 'contact'].includes(route.slug)) {
         continue;
       }
 

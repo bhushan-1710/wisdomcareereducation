@@ -40,23 +40,25 @@ export function Hero({ className = '', hasVideoStory = false }: HeroProps) {
       <Container size="default">
         {/* Centered Hero Typography */}
         <div className="mx-auto max-w-4xl text-center">
-          <Reveal rotateX durationMs={700}>
-            <h1 className="font-heading text-4xl font-extrabold tracking-tight text-wce-navy-900 sm:text-5xl md:text-6xl lg:text-[72px] lg:leading-[1.08]">
-              Your global career{' '}
-              <span className="relative inline-block text-wce-coral-500">
+          <h1 className="font-heading text-4xl font-extrabold tracking-tight text-wce-navy-900 sm:text-5xl md:text-6xl lg:text-[72px] lg:leading-[1.08]">
+            <Reveal rotateX delayMs={60} durationMs={700}>
+              <span className="block">Your global career</span>
+            </Reveal>
+            <Reveal rotateX delayMs={140} durationMs={700}>
+              <span className="relative inline-block text-wce-coral-500 mt-1 sm:mt-2">
                 starts here
               </span>
-            </h1>
-          </Reveal>
+            </Reveal>
+          </h1>
 
-          <Reveal delayMs={120} durationMs={700}>
+          <Reveal delayMs={240} durationMs={700}>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-wce-slate-600 sm:text-lg md:mt-6 md:text-xl">
               Internships, study abroad and professional development programs, backed by 15+ years of experience.
             </p>
           </Reveal>
 
           {/* CTA Row */}
-          <Reveal delayMs={240} durationMs={700}>
+          <Reveal delayMs={340} durationMs={700}>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Button href="/contact" variant="primary" size="lg">
                 {siteConfig.primaryCta}
@@ -74,7 +76,7 @@ export function Hero({ className = '', hasVideoStory = false }: HeroProps) {
 
         {/* Hero Illustration Container */}
         <div className="relative mx-auto mt-10 max-w-5xl md:mt-14">
-          <Reveal delayMs={360} durationMs={800} distance={32}>
+          <Reveal delayMs={440} durationMs={800} distance={32}>
             <div className="relative rounded-[24px] bg-wce-white/40 p-2 backdrop-blur-xs shadow-wce-sm border border-wce-slate-300/30">
               <Illustration
                 id="ill-hero"
@@ -86,7 +88,7 @@ export function Hero({ className = '', hasVideoStory = false }: HeroProps) {
 
           {/* Ref C Desktop Floating Story Card (Overlaps hero bottom) */}
           <div className="hidden md:block relative z-20 -mb-14 mt-8">
-            <Reveal delayMs={480} durationMs={700} distance={40}>
+            <Reveal delayMs={540} durationMs={700} distance={40}>
               <div className="mx-auto max-w-[620px] rounded-[20px] border border-wce-slate-200/90 bg-wce-white p-4 shadow-wce-float">
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-3">

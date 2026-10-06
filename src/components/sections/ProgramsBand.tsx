@@ -57,7 +57,7 @@ export function ProgramsBand({ className = '' }: ProgramsBandProps) {
                   <div className="mb-5 flex items-center justify-center overflow-hidden rounded-[16px] border border-wce-blue-100/60 bg-wce-blue-50/80 p-4">
                     <Illustration
                       id={program.art}
-                      className="w-full aspect-square transition-transform duration-320 group-hover:scale-104 group-hover:rotate-1"
+                      className="w-full aspect-square transition-transform duration-320 group-hover:scale-[1.04] group-hover:rotate-3"
                     />
                   </div>
 

@@ -5,6 +5,7 @@ test.describe('Accessibility Audits', () => {
   test('Home page passes axe checks', async ({ page }) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(1200);
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])
@@ -16,6 +17,7 @@ test.describe('Accessibility Audits', () => {
   test('Dev components gallery passes axe checks', async ({ page }) => {
     await page.goto('/dev/components');
     await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(600);
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])
@@ -28,6 +30,7 @@ test.describe('Accessibility Audits', () => {
   test('Dev content verification page passes axe checks', async ({ page }) => {
     await page.goto('/dev/content');
     await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(600);
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])
@@ -57,6 +60,7 @@ test.describe('Accessibility Audits', () => {
     test(`Route ${route} passes axe checks`, async ({ page }) => {
       await page.goto(route);
       await page.waitForLoadState('networkidle');
+      await page.waitForTimeout(1200);
 
       const accessibilityScanResults = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])
@@ -65,4 +69,22 @@ test.describe('Accessibility Audits', () => {
       expect(accessibilityScanResults.violations).toEqual([]);
     });
   }
+
+  test('Home page with prefers-reduced-motion renders all content visibly without opacity traps', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const heroHeading = page.locator('h1');
+    await expect(heroHeading).toBeVisible();
+
+    const statCount = page.getByText('15+', { exact: true });
+    await expect(statCount).toBeVisible();
+
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])
+      .analyze();
+
+    expect(accessibilityScanResults.violations).toEqual([]);
+  });
 });

@@ -3,6 +3,7 @@ import { Container } from '@/components/ui/Container';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Illustration } from '@/components/art/Illustration';
 import { EnquiryForm } from '@/components/forms/EnquiryForm';
+import { Reveal } from '@/components/motion/Reveal';
 
 export function FinalCtaSection() {
   return (
@@ -11,29 +12,38 @@ export function FinalCtaSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Heading, Subcopy & Runway Scene Illustration */}
           <div className="lg:col-span-6">
-            <Eyebrow light>Start your journey</Eyebrow>
-            <h2 className="text-[36px] sm:text-[44px] lg:text-[52px] font-bold text-wce-white tracking-tight mt-3 mb-5 leading-[1.12]">
-              Achieve your dream today
-            </h2>
-            <p className="text-[16px] sm:text-[18px] text-wce-slate-300 leading-relaxed max-w-lg mb-8">
-              Book a free counselling session and tell us where you want to go. Our experienced advisors guide you through programs, admissions, documentation, and departure.
-            </p>
+            <Reveal durationMs={650}>
+              <Eyebrow light>Start your journey</Eyebrow>
+              <h2 className="text-[36px] sm:text-[44px] lg:text-[52px] font-bold text-wce-white tracking-tight mt-3 mb-5 leading-[1.12]">
+                Achieve your dream today
+              </h2>
+            </Reveal>
+
+            <Reveal delayMs={120} durationMs={650}>
+              <p className="text-[16px] sm:text-[18px] text-wce-slate-300 leading-relaxed max-w-lg mb-8">
+                Book a free counselling session and tell us where you want to go. Our experienced advisors guide you through programs, admissions, documentation, and departure.
+              </p>
+            </Reveal>
 
             {/* Documented runway scene illustration container - clean solid navy surface */}
-            <div className="rounded-[24px] bg-wce-navy-800 p-5 sm:p-6 border border-wce-navy-700 max-w-lg">
-              <div className="w-full aspect-[16/7] rounded-[16px] overflow-hidden">
-                <Illustration id="ill-cta-scene" className="w-full h-full object-cover" />
+            <Reveal delayMs={240} durationMs={700} distance={28}>
+              <div className="rounded-[24px] bg-wce-navy-800 p-5 sm:p-6 border border-wce-navy-700 max-w-lg">
+                <div className="w-full aspect-[16/7] rounded-[16px] overflow-hidden">
+                  <Illustration id="ill-cta-scene" className="w-full h-full object-cover" />
+                </div>
+                <div className="mt-4 flex items-center justify-between text-xs text-wce-slate-400">
+                  <span>Personalised 1-on-1 Guidance</span>
+                  <span>15+ Years Registered Experience</span>
+                </div>
               </div>
-              <div className="mt-4 flex items-center justify-between text-xs text-wce-slate-400">
-                <span>Personalised 1-on-1 Guidance</span>
-                <span>15+ Years Registered Experience</span>
-              </div>
-            </div>
+            </Reveal>
           </div>
 
           {/* Right Column: Enquiry Form UI */}
           <div className="lg:col-span-6">
-            <EnquiryForm />
+            <Reveal delayMs={160} durationMs={700}>
+              <EnquiryForm />
+            </Reveal>
           </div>
         </div>
       </Container>

@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Illustration } from '@/components/art/Illustration';
 import { Reveal } from '@/components/motion/Reveal';
+import { CountUp } from '@/components/motion/CountUp';
 import { TbcBadge } from '@/lib/tbc';
 
 export interface AboutStatsProps {
@@ -40,7 +41,7 @@ export function AboutStats({ className = '' }: AboutStatsProps) {
               <div className="mt-8 rounded-[20px] border border-wce-slate-200/90 bg-wce-blue-50/70 p-6 shadow-wce-sm sm:flex sm:items-center sm:gap-6">
                 <div className="shrink-0 text-left">
                   <span className="font-heading text-5xl font-extrabold leading-none text-wce-navy-900 sm:text-6xl">
-                    15+
+                    <CountUp end={15} suffix="+" />
                   </span>
                   <span className="mt-1 block text-xs font-bold uppercase tracking-wider text-wce-coral-800">
                     Years of Experience
