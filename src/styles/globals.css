@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand */
+  --wce-navy-900: #0F1B3D;   /* headings, body-strong text */
+  --wce-navy-800: #1C2757;   /* footer, dark buttons (indigo-leaning, as Ref C) */
+  --wce-navy-700: #1E3A8A;   /* links on light backgrounds */
+  --wce-blue-500: #3B82F6;   /* focus ring, decorative only */
+  --wce-blue-100: #E6F0FF;   /* soft section bands (Ref A) */
+  --wce-blue-50:  #F4F8FF;   /* page background */
+
+  /* Accent (Ref B coral, split into three roles for contrast) */
+  --wce-coral-400: #FF7A59;  /* illustrations, decorative fills, badges */
+  --wce-coral-500: #F0572F;  /* LARGE headline highlight (>=28px) and outlines */
+  --wce-coral-700: #CF4326;  /* button fill with white text, eyebrow labels */
+  --wce-coral-800: #B83A20;  /* button hover */
+  --wce-coral-100: #FFE9E3;
+
+  /* Illustration support colors */
+  --wce-sun-400:   #FFC857;
+  --wce-green-400: #8FBF5A;
+  --wce-green-200: #D6EBB5;
+  --wce-sky-300:   #9CCBFF;
+  --wce-terracotta:#C4533A;  /* building/roof accents */
+  --wce-sand-100:  #F6EBD0;  /* ground, runway, beach */
+
+  /* Neutrals */
+  --wce-ink:       #0B1020;
+  --wce-slate-600: #475569;  /* body text */
+  --wce-slate-300: #CBD5E1;  /* borders */
+  --wce-white:     #FFFFFF;
+
+  /* Elevation / Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 27, 61, 0.06);
+  --shadow-md: 0 12px 32px rgba(15, 27, 61, 0.10);
+  --shadow-float: 0 24px 60px rgba(15, 27, 61, 0.16);
+
+  /* Radii */
+  --radius-card: 20px;
+  --radius-pill: 9999px;
+  --radius-input: 14px;
+  --radius-img: 24px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 700ms;
+}
+
+@theme {
+  --color-wce-navy-900: var(--wce-navy-900);
+  --color-wce-navy-800: var(--wce-navy-800);
+  --color-wce-navy-700: var(--wce-navy-700);
+  --color-wce-blue-500: var(--wce-blue-500);
+  --color-wce-blue-100: var(--wce-blue-100);
+  --color-wce-blue-50: var(--wce-blue-50);
+
+  --color-wce-coral-400: var(--wce-coral-400);
+  --color-wce-coral-500: var(--wce-coral-500);
+  --color-wce-coral-700: var(--wce-coral-700);
+  --color-wce-coral-800: var(--wce-coral-800);
+  --color-wce-coral-100: var(--wce-coral-100);
+
+  --color-wce-sun-400: var(--wce-sun-400);
+  --color-wce-green-400: var(--wce-green-400);
+  --color-wce-green-200: var(--wce-green-200);
+  --color-wce-sky-300: var(--wce-sky-300);
+  --color-wce-terracotta: var(--wce-terracotta);
+  --color-wce-sand-100: var(--wce-sand-100);
+
+  --color-wce-ink: var(--wce-ink);
+  --color-wce-slate-600: var(--wce-slate-600);
+  --color-wce-slate-300: var(--wce-slate-300);
+  --color-wce-white: var(--wce-white);
+
+  --font-heading: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  --shadow-wce-sm: var(--shadow-sm);
+  --shadow-wce-md: var(--shadow-md);
+  --shadow-wce-float: var(--shadow-float);
+
+  --radius-wce-card: var(--radius-card);
+  --radius-wce-pill: var(--radius-pill);
+  --radius-wce-input: var(--radius-input);
+  --radius-wce-img: var(--radius-img);
+}
+
+/* Custom Utilities for WCE Design System */
+@layer utilities {
+  .headline-highlight {
+    color: var(--wce-coral-500);
+  }
+
+  .focus-ring {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--wce-blue-500);
+    outline-offset: 2px;
+  }
+}
+
+/* Base Layer Styles */
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: var(--wce-slate-600);
+    background-color: var(--wce-blue-50);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--wce-navy-900);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Accessibility: Skip Link Utility */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background-color: var(--wce-navy-900);
+  color: var(--wce-white);
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  z-index: 9999;
+  font-weight: 600;
+  transition: top var(--dur-fast) var(--ease-out);
+}
+.skip-to-content:focus {
+  top: 16px;
+}
