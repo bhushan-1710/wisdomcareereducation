@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" fill="none">
+  <!-- WCE Why Us Badge 3: Global Network (ill-why-3) -->
+  <defs>
+    <filter id="why3-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0F1B3D" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Circular Base Badge -->
+  <circle cx="48" cy="48" r="42" fill="#F0F9FF" />
+  <circle cx="48" cy="48" r="37" stroke="#2563EB" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="3 3" fill="none" />
+
+  <g filter="url(#why3-shadow)">
+    <!-- Globe Core (Navy) -->
+    <circle cx="48" cy="48" r="28" fill="#0F1B3D" />
+
+    <!-- Latitude / Longitude Network Rings -->
+    <ellipse cx="48" cy="48" rx="27" ry="12" stroke="#2563EB" stroke-width="2" fill="none" />
+    <ellipse cx="48" cy="48" rx="12" ry="27" stroke="#2563EB" stroke-width="2" fill="none" />
+
+    <!-- Connecting Network Route Lines -->
+    <path d="M30 40 L48 30 L66 42 L52 64 L30 40 Z" stroke="#FFC857" stroke-width="2" stroke-dasharray="3 2" fill="none" />
+
+    <!-- Network Hub Nodes (Gold & Coral Dots) -->
+    <!-- Node 1 (Europe/UK) -->
+    <circle cx="48" cy="30" r="5" fill="#FFC857" />
+    <circle cx="48" cy="30" r="2.5" fill="#0F1B3D" />
+    <!-- Node 2 (USA/Americas) -->
+    <circle cx="30" cy="40" r="4.5" fill="#D95338" />
+    <!-- Node 3 (Asia / Malaysia / India) -->
+    <circle cx="66" cy="42" r="5" fill="#FFC857" />
+    <circle cx="66" cy="42" r="2.5" fill="#0F1B3D" />
+    <!-- Node 4 (Australia/NZ) -->
+    <circle cx="52" cy="64" r="4.5" fill="#D95338" />
+  </g>
+</svg>

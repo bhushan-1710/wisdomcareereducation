@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" fill="none">
+  <!-- WCE Sector Tile: Healthcare & Nursing (ill-sector-nursing) -->
+  <defs>
+    <filter id="nurse-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0F1B3D" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- Pastel Rounded Tile Background (Soft Rose / Pearl) -->
+  <rect x="12" y="12" width="216" height="216" rx="28" fill="#EFF6FF" />
+
+  <!-- Shadow underneath -->
+  <ellipse cx="120" cy="186" rx="66" ry="14" fill="#0F1B3D" fill-opacity="0.08" />
+
+  <g filter="url(#nurse-shadow)">
+    <!-- 1. Clinical Medical Clipboard (Base) -->
+    <g transform="translate(68, 52)">
+      <rect x="0" y="14" width="104" height="128" rx="10" fill="#FFFFFF" />
+      <!-- Clip at top -->
+      <rect x="30" y="6" width="44" height="16" rx="4" fill="#CBD5E1" />
+      <circle cx="52" cy="12" r="3" fill="#0F1B3D" />
+      <!-- Document header lines -->
+      <line x1="20" y1="38" x2="84" y2="38" stroke="#93C5FD" stroke-width="4" stroke-linecap="round" />
+      <line x1="20" y1="48" x2="68" y2="48" stroke="#93C5FD" stroke-width="3" stroke-linecap="round" />
+      <!-- Heartbeat ECG pulse wave -->
+      <path d="M18 92 L38 92 L46 76 L54 108 L62 84 L70 92 L86 92" stroke="#D95338" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </g>
+
+    <!-- 2. Medical Red Cross Shield (Foreground Left) -->
+    <g transform="translate(44, 112)">
+      <!-- Circle / Shield -->
+      <circle cx="28" cy="28" r="26" fill="#D95338" />
+      <!-- White Cross -->
+      <rect x="22" y="12" width="12" height="32" rx="3" fill="#FFFFFF" />
+      <rect x="12" y="22" width="32" height="12" rx="3" fill="#FFFFFF" />
+    </g>
+
+    <!-- 3. Stethoscope (Foreground Right Weaving Up) -->
+    <g transform="translate(118, 92)">
+      <!-- Tubing (Navy) -->
+      <path d="M10 20 Q-5 70 30 75 Q60 80 62 48" stroke="#0F1B3D" stroke-width="6" stroke-linecap="round" fill="none" />
+      <path d="M62 48 L62 20" stroke="#0F1B3D" stroke-width="5" stroke-linecap="round" />
+      <!-- Metal binaural arch & earpieces -->
+      <path d="M52 20 Q62 5 72 20" stroke="#94A3B8" stroke-width="4" fill="none" />
+      <circle cx="52" cy="20" r="3.5" fill="#0F1B3D" />
+      <circle cx="72" cy="20" r="3.5" fill="#0F1B3D" />
+      <!-- Chest piece / Diaphragm (Gold & Silver) -->
+      <circle cx="10" cy="20" r="14" fill="#94A3B8" />
+      <circle cx="10" cy="20" r="10" fill="#FFC857" />
+    </g>
+  </g>
+</svg>

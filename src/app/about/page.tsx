@@ -26,13 +26,15 @@ export default function AboutPage() {
         title="15+ years of turning ambition into global careers"
         description="Wisdom Career Education was founded with a clear mission: to provide Indian students and graduates with honest, transparent, and structured access to international universities and global industry placements."
         art="ill-about"
+        artContainerClassName="w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[480px] flex items-center justify-center drop-shadow-md"
         breadcrumbs={[{ label: 'About' }]}
         ctaLabel="Book free counselling"
         ctaHref="/contact"
+        className="pb-8 md:pb-12"
       />
 
       {/* Narrative Story Section */}
-      <section className="py-24 md:py-32 bg-wce-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-wce-white">
         <Container>
           <div className="max-w-4xl mx-auto">
             <div className="mb-12">

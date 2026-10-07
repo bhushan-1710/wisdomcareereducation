@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" width="240" height="140" fill="none">
+  <!-- WCE Cloud Decoration 3 (ill-cloud-3) -->
+  <!-- Cast shadow -->
+  <path d="M56 84 C48 84 40 90 42 100 C44 108 52 114 62 114 L178 114 C190 114 200 106 198 94 C196 84 186 78 176 80 C172 68 158 60 144 64 C138 52 120 48 108 54 C96 50 82 58 76 72 C68 72 58 76 56 84 Z" fill="#0F1B3D" fill-opacity="0.06" transform="translate(5, 10)" />
+
+  <!-- Underside tone (sky blue) -->
+  <path d="M52 78 C44 78 36 84 38 94 C40 102 48 108 58 108 L174 108 C186 108 196 100 194 88 C192 78 182 72 172 74 C168 62 154 54 140 58 C134 46 116 42 104 48 C92 44 78 52 72 66 C64 66 54 70 52 78 Z" fill="#E0F2FE" />
+
+  <!-- Cloud main body (pure white) -->
+  <path d="M50 74 C42 74 34 80 36 90 C38 98 46 104 56 104 L172 104 C184 104 194 96 192 84 C190 74 180 68 170 70 C166 58 152 50 138 54 C132 42 114 38 102 44 C90 40 76 48 70 62 C62 62 52 66 50 74 Z" fill="#FFFFFF" />
+
+  <ellipse cx="106" cy="48" rx="26" ry="12" fill="#F8FAFC" />
+  <ellipse cx="144" cy="56" rx="20" ry="10" fill="#F8FAFC" />
+</svg>

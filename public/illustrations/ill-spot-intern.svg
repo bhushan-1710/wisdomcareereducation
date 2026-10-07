@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" fill="none">
+  <!-- WCE Spotlight Feature: Workplace & Internship (ill-spot-intern) -->
+  <defs>
+    <filter id="spot-intern-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#0F1B3D" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- Large Pastel Isometric Base Plinth (Warm Sand / Coral Base) -->
+  <polygon points="360,60 640,220 360,380 80,220" fill="#FFF7ED" />
+  <polygon points="80,220 360,380 360,420 80,260" fill="#FED7AA" />
+  <polygon points="360,380 640,220 640,260 360,420" fill="#FDBA74" />
+
+  <g filter="url(#spot-intern-shadow)">
+    <!-- 5-Star Hotel & Modern Corporate Hub -->
+    <polygon points="360,160 520,250 360,340 200,250" fill="#FFFFFF" />
+    <polygon points="200,250 360,340 360,356 200,266" fill="#CBD5E1" />
+    <polygon points="360,340 520,250 520,266 360,356" fill="#94A3B8" />
+
+    <!-- Left Facade: Terracotta Hotel Wing -->
+    <polygon points="230,220 360,295 360,150 230,75" fill="#C4533A" />
+    <!-- Right Facade: Deep Navy Corporate Wing -->
+    <polygon points="360,295 490,220 490,75 360,150" fill="#0F1B3D" />
+
+    <!-- Modern Rooftop Terrace & Pergola -->
+    <polygon points="220,80 360,0 500,80 360,150" fill="#D95338" />
+
+    <!-- Glass Windows Left (Hotel suites) -->
+    <g fill="#FFFFFF" fill-opacity="0.9">
+      <polygon points="250,195 280,212 280,186 250,169" />
+      <polygon points="295,221 325,238 325,212 295,195" />
+      <polygon points="250,155 280,172 280,146 250,129" />
+      <polygon points="295,181 325,198 325,172 295,155" />
+    </g>
+
+    <!-- Glass Windows Right (Corporate suites) -->
+    <g fill="#93C5FD">
+      <polygon points="395,238 425,221 425,195 395,212" />
+      <polygon points="440,212 470,195 470,169 440,186" />
+      <polygon points="395,198 425,181 425,155 395,172" />
+      <polygon points="440,172 470,155 470,129 440,146" />
+    </g>
+
+    <!-- Golden Canopy / Hotel Entrance Atrium -->
+    <polygon points="340,305 380,282 380,312 340,335" fill="#FFC857" />
+  </g>
+
+  <!-- Hovering Professional Briefcase Left -->
+  <g transform="translate(100, 150) rotate(-12)">
+    <polygon points="45,30 95,60 50,85 0,55" fill="#D95338" />
+    <polygon points="0,55 50,85 50,120 0,90" fill="#C03E26" />
+    <polygon points="50,85 95,60 95,95 50,120" fill="#992A15" />
+    <polygon points="25,68 35,74 35,82 25,76" fill="#FFC857" />
+    <polygon points="45,80 55,86 55,94 45,88" fill="#FFC857" />
+  </g>
+
+  <!-- Hovering Chef Cloche & 5-Star Platter Right -->
+  <g transform="translate(480, 160)">
+    <ellipse cx="60" cy="70" rx="55" ry="14" fill="#CBD5E1" />
+    <ellipse cx="60" cy="67" rx="50" ry="11" fill="#FFFFFF" />
+    <path d="M18 64 C18 20 102 20 102 64 Z" fill="#F8FAFC" />
+    <ellipse cx="60" cy="18" rx="8" ry="6" fill="#FFC857" />
+  </g>
+</svg>

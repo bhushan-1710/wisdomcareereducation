@@ -68,6 +68,35 @@ function buildDesktopRoute(w: number, h: number): string {
   ].join(' ');
 }
 
+/**
+ * Builds a simplified organic flight route for mobile (< 768px) and tablet (< 1024px).
+ * Traverses gracefully down the safe left gutter without crossing the content column.
+ * Gentle bezier curvature provides a lifelike banking sway while clamping rotation.
+ */
+function buildMobileRoute(h: number, baseCenterX = 26): string {
+  const startY = 40;
+  const endY = Math.max(startY + 400, h - 60);
+  const totalH = endY - startY;
+  const segments = 12;
+  const segH = totalH / segments;
+  const points = [`M ${baseCenterX.toFixed(1)},${startY}`];
+
+  for (let i = 1; i <= segments; i++) {
+    const prevY = startY + (i - 1) * segH;
+    const currY = startY + i * segH;
+    const cy1 = prevY + segH * 0.35;
+    const cy2 = prevY + segH * 0.65;
+    const sway = i % 2 === 1 ? 3 : -3;
+    const targetX = baseCenterX + (i === segments ? 0 : sway);
+    const cx1 = baseCenterX - sway * 0.4;
+    const cx2 = targetX + sway * 0.4;
+    points.push(
+      `C ${cx1.toFixed(1)},${cy1.toFixed(1)} ${cx2.toFixed(1)},${cy2.toFixed(1)} ${targetX.toFixed(1)},${currY.toFixed(1)}`
+    );
+  }
+  return points.join(' ');
+}
+
 export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRouteProps) {
   const prefersReduced = useReducedMotion();
   const maskId = useId();
@@ -93,6 +122,7 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
   const routePathRef = useRef<SVGPathElement>(null);
   const maskPathRef = useRef<SVGPathElement>(null);
   const planeRef = useRef<HTMLDivElement>(null);
+  const mobileRoutePathRef = useRef<SVGPathElement>(null);
   const mobilePlaneRef = useRef<HTMLDivElement>(null);
   const mobileMaskPathRef = useRef<SVGPathElement>(null);
 
@@ -100,8 +130,6 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
   const cloud1Ref = useRef<HTMLDivElement>(null);
   const cloud2Ref = useRef<HTMLDivElement>(null);
   const cloud3Ref = useRef<HTMLDivElement>(null);
-
-  const isDesktop = dimensions.width >= 1024;
 
   // Asynchronously resolve canonical SVG asset path if placed in PLACED_ASSETS
   useEffect(() => {
@@ -167,9 +195,12 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
     };
   }, [containerId]);
 
+  const isDesktop = dimensions.width >= 1024;
+  const mobileBaseCenterX = dimensions.width >= 768 ? 34 : 26;
+  const mobileSvgWidth = dimensions.width >= 768 ? 72 : 56;
   const isUsingCanonical = Boolean(canonicalPathD);
   const desktopPathD = canonicalPathD || buildDesktopRoute(dimensions.width, dimensions.height);
-  const mobilePathD = `M 16,40 L 16,${dimensions.height - 40}`;
+  const mobilePathD = buildMobileRoute(dimensions.height, mobileBaseCenterX);
 
   // Main Motion Engine: Single central ScrollTrigger driving MotionPath + Progressive Reveal
   useEffect(() => {
@@ -327,11 +358,12 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
           tl.to(cloud3Ref.current, { y: -50, ease: 'none' }, 0);
         }
       } else {
-        // --- MOBILE DELIBERATELY SIMPLIFIED GUTTER ROUTE (< 1024px) ---
+        // --- MOBILE / TABLET DELIBERATELY SIMPLIFIED GUTTER ROUTE (< 1024px) ---
         const mobilePlaneEl = mobilePlaneRef.current;
         const mobileMaskEl = mobileMaskPathRef.current;
+        const mobilePathEl = mobileRoutePathRef.current;
 
-        if (!mobilePlaneEl || !mobileMaskEl) return;
+        if (!mobilePlaneEl || !mobileMaskEl || !mobilePathEl) return;
 
         const mobileLength = mobileMaskEl.getTotalLength();
         gsap.set(mobileMaskEl, {
@@ -339,9 +371,16 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
           strokeDashoffset: mobileLength,
         });
 
+        // Initialize mobile plane along the organic gutter route
         gsap.set(mobilePlaneEl, {
-          y: 40,
-          rotation: 180, // Pointing downwards along vertical track
+          motionPath: {
+            path: mobilePathEl,
+            align: mobilePathEl,
+            alignOrigin: [0.5, 0.5],
+            autoRotate: 90,
+            start: 0,
+            end: 0,
+          },
         });
 
         const mobileTl = gsap.timeline({
@@ -353,21 +392,38 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
             onUpdate: (self) => {
               const p = self.progress;
 
-              // Synchronize Journey milestones on mobile
-              const jProgress = Math.min(1, Math.max(0, (p - 0.35) / 0.30));
-              const activeStep = Math.min(5, Math.max(1, Math.ceil(jProgress * 5)));
-              window.dispatchEvent(
-                new CustomEvent('wce:journey-step', {
-                  detail: { step: activeStep, progress: jProgress },
-                })
-              );
+              // Synchronize Journey milestones on mobile directly
+              const journeyStart = 0.38;
+              const journeyEnd = 0.64;
+              if (p >= journeyStart && p <= journeyEnd) {
+                const jProgress = Math.min(1, Math.max(0, (p - journeyStart) / (journeyEnd - journeyStart)));
+                const activeStep = Math.min(5, Math.max(1, Math.ceil(jProgress * 5)));
+                window.dispatchEvent(
+                  new CustomEvent('wce:journey-step', {
+                    detail: { step: activeStep, progress: jProgress },
+                  })
+                );
+              } else if (p > journeyEnd) {
+                window.dispatchEvent(
+                  new CustomEvent('wce:journey-step', {
+                    detail: { step: 5, progress: 1 },
+                  })
+                );
+              } else if (p < journeyStart) {
+                window.dispatchEvent(
+                  new CustomEvent('wce:journey-step', {
+                    detail: { step: 1, progress: 0 },
+                  })
+                );
+              }
 
               if (process.env.NODE_ENV !== 'production') {
+                const currentPt = mobilePathEl.getPointAtLength(p * mobileLength);
                 setDebugState({
                   progress: p,
-                  milestone: `Mobile Step ${activeStep}`,
-                  x: 20,
-                  y: 40 + p * (dimensions.height - 80),
+                  milestone: `Mobile Step ${p >= journeyStart && p <= journeyEnd ? Math.ceil(((p - journeyStart) / (journeyEnd - journeyStart)) * 5) : 'En Route'}`,
+                  x: currentPt.x,
+                  y: currentPt.y,
                   mode: 'mobile',
                   reducedMotion: false,
                 });
@@ -376,25 +432,19 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
           },
         });
 
-        // Simplified vertical descent down the left gutter
+        // Follow organic mobile bezier path with gentle banking
         mobileTl.to(
           mobilePlaneEl,
           {
-            y: dimensions.height - 60,
+            motionPath: {
+              path: mobilePathEl,
+              align: mobilePathEl,
+              alignOrigin: [0.5, 0.5],
+              autoRotate: 90,
+              start: 0,
+              end: 1,
+            },
             ease: 'none',
-          },
-          0
-        );
-
-        // Subtle micro-sway in the gutter (±3px) for living feel without obstruction
-        mobileTl.to(
-          mobilePlaneEl,
-          {
-            x: 3,
-            repeat: 12,
-            yoyo: true,
-            duration: 0.08,
-            ease: 'sine.inOut',
           },
           0
         );
@@ -414,12 +464,12 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
     return () => {
       ctx.revert();
     };
-  }, [containerId, dimensions, isDesktop, prefersReduced, desktopPathD]);
+  }, [containerId, dimensions, isDesktop, prefersReduced, desktopPathD, mobilePathD]);
 
   return (
     <>
       <div
-        className="pointer-events-none absolute inset-0 z-[5] overflow-hidden"
+        className="pointer-events-none absolute inset-0 z-[2] overflow-hidden"
         aria-hidden="true"
       >
       {/* ================= DESKTOP FLIGHT ROUTE (>= 1024px) ================= */}
@@ -522,7 +572,7 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
             >
               <Illustration
                 id="ill-plane-top"
-                className="h-20 w-20 md:h-24 md:w-24 object-contain"
+                className="w-[68px] h-[68px] xl:w-[84px] xl:h-[84px] object-contain"
                 alt="Paper plane traveling through career journey"
               />
             </div>
@@ -535,11 +585,13 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
         <>
           {/* Vertical gutter SVG track */}
           <svg
-            className="pointer-events-none absolute top-0 bottom-0 left-2.5 sm:left-4 z-[2] h-full w-8"
-            width="32"
+            className="pointer-events-none absolute top-0 bottom-0 left-0 z-[2] h-full"
+            style={{ width: `${mobileSvgWidth}px` }}
+            width={mobileSvgWidth}
             height={dimensions.height}
-            viewBox={`0 0 32 ${dimensions.height}`}
+            viewBox={`0 0 ${mobileSvgWidth} ${dimensions.height}`}
             fill="none"
+            data-asset-id="ill-route-mobile"
           >
             <defs>
               <mask id={`${maskId}-mobile`} maskUnits="userSpaceOnUse">
@@ -548,7 +600,7 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
                   d={mobilePathD}
                   fill="none"
                   stroke="#ffffff"
-                  strokeWidth="24"
+                  strokeWidth="28"
                   strokeLinecap="round"
                 />
               </mask>
@@ -567,6 +619,7 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
 
             {/* Revealed active line */}
             <path
+              ref={mobileRoutePathRef}
               d={mobilePathD}
               fill="none"
               stroke="#1D4ED8"
@@ -578,18 +631,18 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
             />
           </svg>
 
-          {/* Small mobile plane in the left gutter */}
+          {/* Responsive mobile/tablet plane in the left gutter */}
           {!prefersReduced && (
             <div
               ref={mobilePlaneRef}
-              className="pointer-events-none absolute left-2.5 sm:left-4 z-[4] -translate-x-1/2 -translate-y-1/2"
+              className="pointer-events-none absolute left-0 top-0 z-[2] -translate-x-1/2 -translate-y-1/2"
               style={{
-                filter: 'drop-shadow(0 6px 12px rgba(15, 27, 61, 0.18))',
+                filter: 'drop-shadow(0 6px 14px rgba(15, 27, 61, 0.18))',
               }}
             >
               <Illustration
                 id="ill-plane-top"
-                className="h-8 w-8 sm:h-9 sm:w-9 object-contain"
+                className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] object-contain"
                 alt="Paper plane mobile journey guide"
               />
             </div>

@@ -74,19 +74,57 @@ test.describe('Paper Plane Signature Flight System (Step 7)', () => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
 
+    // Zero horizontal overflow check
+    const hasHorizontalScroll = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > window.innerWidth;
+    });
+    expect(hasHorizontalScroll).toBe(false);
+
+    // Mobile route SVG track exists in left gutter
+    const mobileRouteSvg = page.locator('svg[data-asset-id="ill-route-mobile"]');
+    await expect(mobileRouteSvg).toBeVisible();
+
+    // Mobile paper plane traveler
     const mobilePlane = page.locator('[data-asset-id="ill-plane-top"]').first();
     await expect(mobilePlane).toBeVisible();
 
-    const box = await mobilePlane.boundingBox();
-    expect(box).not.toBeNull();
-    if (box) {
-      // Plane is strictly positioned in the left gutter (< 60px)
-      expect(box.x).toBeLessThan(60);
+    const planeBox = await mobilePlane.boundingBox();
+    expect(planeBox).not.toBeNull();
+    if (planeBox) {
+      // Plane is strictly positioned in the left gutter (< 60px) and within viewport (>= 0px)
+      expect(planeBox.x).toBeGreaterThanOrEqual(0);
+      expect(planeBox.x).toBeLessThan(60);
     }
 
-    // Check that content cards are visible
+    // Check that readable text headings are completely visible and clear of plane
     const aboutHeading = page.getByRole('heading', { name: /15\+ years of turning ambition into careers/i });
     await expect(aboutHeading).toBeVisible();
+    const headingBox = await aboutHeading.boundingBox();
+    if (planeBox && headingBox) {
+      // Heading content column starts to the right of the gutter plane corridor
+      expect(headingBox.x).toBeGreaterThan(planeBox.x);
+    }
+  });
+
+  test('360px compact mobile layout has zero horizontal overflow and safe gutter corridor', async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 740 });
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const hasHorizontalScroll = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > window.innerWidth;
+    });
+    expect(hasHorizontalScroll).toBe(false);
+
+    const mobilePlane = page.locator('[data-asset-id="ill-plane-top"]').first();
+    await expect(mobilePlane).toBeVisible();
+
+    const planeBox = await mobilePlane.boundingBox();
+    expect(planeBox).not.toBeNull();
+    if (planeBox) {
+      expect(planeBox.x).toBeGreaterThanOrEqual(0);
+      expect(planeBox.x).toBeLessThan(60);
+    }
   });
 
   test('Reduced motion hides moving plane, displays static route, and keeps all steps accessible', async ({ page }) => {

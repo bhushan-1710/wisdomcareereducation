@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" fill="none">
+  <!-- WCE Student Avatar 4 (ill-avatar-4) -->
+  <circle cx="64" cy="64" r="64" fill="#FFE9E3" />
+  <!-- Shoulders / Sand linen overshirt -->
+  <path d="M26 128 C26 96 42 88 64 88 C86 88 102 96 102 128 Z" fill="#F6EBD0" />
+  <polygon points="58,88 70,88 64,102" fill="#D95338" />
+  <!-- Neck -->
+  <rect x="58" y="72" width="12" height="18" rx="4" fill="#D4A373" />
+  <!-- Head -->
+  <ellipse cx="64" cy="54" rx="22" ry="26" fill="#D4A373" />
+  <!-- Hair: Short styled wave -->
+  <path d="M42 46 C42 26 52 20 66 22 C78 24 86 32 86 46 C82 36 74 32 64 32 C52 32 46 36 42 46 Z" fill="#0F1B3D" />
+  <!-- Eyes -->
+  <circle cx="56" cy="54" r="2.5" fill="#0F1B3D" />
+  <circle cx="72" cy="54" r="2.5" fill="#0F1B3D" />
+  <!-- Smile -->
+  <path d="M60 64 Q64 68 68 64" stroke="#0F1B3D" stroke-width="2" stroke-linecap="round" fill="none" />
+</svg>

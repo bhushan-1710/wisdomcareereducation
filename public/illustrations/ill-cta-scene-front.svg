@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+  <!-- WCE Final CTA Scene: Front Layer (ill-cta-scene-front) -->
+  <defs>
+    <filter id="cta-plane-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#0F1B3D" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Paved Departure Runway (Vanishing towards the sunset center) -->
+  <polygon points="420,700 760,540 1080,540 1340,700" fill="#1E293B" />
+  <polygon points="410,700 750,540 760,540 430,700" fill="#D95338" />
+  <polygon points="1330,700 1080,540 1090,540 1350,700" fill="#CBD5E1" />
+
+  <!-- Glowing Yellow Runway Centerline Markings -->
+  <g fill="#FFC857">
+    <polygon points="860,680 900,680 895,640 865,640" />
+    <polygon points="870,620 890,620 887,590 873,590" />
+    <polygon points="875,580 885,580 884,560 876,560" />
+  </g>
+
+  <!-- Glowing Runway Edge Marker Lights -->
+  <g fill="#FFC857">
+    <circle cx="560" cy="650" r="4.5" />
+    <circle cx="680" cy="595" r="3.5" />
+    <circle cx="1200" cy="650" r="4.5" />
+    <circle cx="1120" cy="595" r="3.5" />
+  </g>
+
+  <!-- Signature Paper Plane Ascending into Sunset Sky -->
+  <g filter="url(#cta-plane-glow)" transform="translate(860, 260) rotate(-22)">
+    <!-- Main Left Wing (Pure White, bathed in sunset rim light) -->
+    <polygon points="70,0 0,95 70,80" fill="#FFFFFF" />
+    <!-- Right Wing (Tonal Coral / Slate Twilight Shade) -->
+    <polygon points="70,0 140,95 70,80" fill="#CBD5E1" />
+    <!-- Under Fuselage Fold -->
+    <polygon points="70,0 70,80 58,92" fill="#94A3B8" />
+    <!-- Coral Brand Accent Wing Fold -->
+    <polygon points="70,16 80,42 70,36 60,42" fill="#D95338" />
+    <!-- Golden Reflection Line -->
+    <line x1="70" y1="0" x2="70" y2="80" stroke="#FFC857" stroke-width="2" />
+  </g>
+
+  <!-- Flight Vapor Trail behind Plane -->
+  <path d="M780 440 Q840 370 890 320" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="3" stroke-dasharray="6 6" fill="none" />
+</svg>

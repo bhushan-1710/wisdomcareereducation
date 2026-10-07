@@ -10,6 +10,7 @@ export interface InnerHeroProps {
   title: string;
   description: string;
   art?: string;
+  artContainerClassName?: string;
   breadcrumbs: BreadcrumbItem[];
   ctaLabel?: string;
   ctaHref?: string;
@@ -21,20 +22,21 @@ export function InnerHero({
   title,
   description,
   art,
+  artContainerClassName,
   breadcrumbs,
   ctaLabel = 'Book free counselling',
   ctaHref = '/contact',
   className = '',
 }: InnerHeroProps) {
   return (
-    <section className={`bg-wce-blue-50/70 border-b border-wce-slate-200/50 pt-10 pb-16 md:pt-14 md:pb-24 ${className}`}>
+    <section className={`bg-wce-blue-50/70 border-b border-wce-slate-200/50 pt-8 pb-12 md:pt-12 md:pb-16 ${className}`}>
       <Container>
         {/* Breadcrumb row */}
-        <div className="mb-8 md:mb-10">
+        <div className="mb-6 md:mb-8">
           <Breadcrumbs items={breadcrumbs} />
         </div>
 
-        <div className={`grid grid-cols-1 ${art ? 'lg:grid-cols-12 gap-10 lg:gap-16 items-center' : 'max-w-3xl'}`}>
+        <div className={`grid grid-cols-1 ${art ? 'lg:grid-cols-12 gap-8 lg:gap-14 items-center' : 'max-w-3xl'}`}>
           {/* Main content */}
           <div className={art ? 'lg:col-span-7' : ''}>
             {eyebrow && <Eyebrow className="mb-2">{eyebrow}</Eyebrow>}
@@ -59,7 +61,12 @@ export function InnerHero({
           {/* Optional illustration stage */}
           {art && (
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="w-full max-w-[420px] aspect-square rounded-[24px] bg-wce-white p-6 shadow-sm border border-wce-blue-100 flex items-center justify-center">
+              <div
+                className={
+                  artContainerClassName ??
+                  'w-full max-w-[420px] aspect-square rounded-[24px] bg-wce-white p-6 shadow-sm border border-wce-blue-100 flex items-center justify-center'
+                }
+              >
                 <Illustration id={art} className="w-full h-full object-contain" />
               </div>
             </div>

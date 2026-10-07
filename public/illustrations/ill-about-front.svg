@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" width="640" height="560" fill="none">
+  <!-- WCE About Scene Foreground Layer (ill-about-front) -->
+  <defs>
+    <filter id="desk-soft-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#0F1B3D" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- Consultation Desk Table (Center Foreground) -->
+  <g filter="url(#desk-soft-shadow)" transform="translate(80, 340)">
+    <!-- Table Top -->
+    <rect x="0" y="0" width="480" height="24" rx="10" fill="#FFFFFF" />
+    <!-- Table Apron / Edge shadow -->
+    <rect x="10" y="24" width="460" height="10" fill="#CBD5E1" />
+    <!-- Table Legs -->
+    <rect x="30" y="34" width="16" height="150" rx="4" fill="#0F1B3D" />
+    <rect x="434" y="34" width="16" height="150" rx="4" fill="#0F1B3D" />
+  </g>
+
+  <!-- Counsellor (Left side, seated behind desk, professional female) -->
+  <g transform="translate(130, 210)">
+    <!-- Chair back -->
+    <rect x="-15" y="40" width="18" height="100" rx="8" fill="#1E356F" />
+    <!-- Torso / Coral blazer -->
+    <path d="M10 68 L60 68 L56 140 L14 140 Z" fill="#D95338" />
+    <polygon points="32,68 38,68 35,90" fill="#FFFFFF" />
+    <!-- Left arm holding counselling folder on desk -->
+    <path d="M52 74 L78 110 L108 132" stroke="#D95338" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="112" cy="134" r="6" fill="#D4A373" />
+    <!-- Head & neck -->
+    <rect x="30" y="52" width="10" height="18" rx="4" fill="#D4A373" />
+    <ellipse cx="35" cy="40" rx="16" ry="19" fill="#D4A373" />
+    <!-- Hair (professional updo / dark hair) -->
+    <circle cx="35" cy="22" r="12" fill="#0F1B3D" />
+    <path d="M20 34 C20 22 30 18 45 19 C55 20 54 32 52 44 C46 36 41 36 35 36 C25 36 21 42 20 34 Z" fill="#0F1B3D" />
+  </g>
+
+  <!-- Student (Right side, leaning forward attentively, male student) -->
+  <g transform="translate(410, 220)">
+    <!-- Chair back -->
+    <rect x="75" y="40" width="18" height="100" rx="8" fill="#1E356F" />
+    <!-- Torso / Sky Blue shirt -->
+    <path d="M20 64 L70 64 L65 130 L25 130 Z" fill="#2563EB" />
+    <!-- Left arm resting on desk taking notes -->
+    <path d="M26 70 L5 106 L-18 122" stroke="#2563EB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="-22" cy="124" r="6" fill="#BC6C25" />
+    <!-- Head & neck -->
+    <rect x="40" y="48" width="10" height="18" rx="4" fill="#BC6C25" />
+    <ellipse cx="45" cy="36" rx="16" ry="19" fill="#BC6C25" />
+    <!-- Hair -->
+    <path d="M28 32 C28 20 40 16 56 18 C64 20 62 30 60 40 C54 32 49 32 44 32 C34 32 29 38 28 32 Z" fill="#0F1B3D" />
+  </g>
+
+  <!-- Items on the Consultation Desk (Foreground) -->
+  <g transform="translate(80, 280)">
+    <!-- 1. Open Pathway Binder / Portfolio (Center Left) -->
+    <g transform="translate(140, 40)">
+      <polygon points="0,20 60,10 70,30 10,40" fill="#FFFFFF" />
+      <polygon points="60,10 120,20 110,40 50,30" fill="#F1F5F9" />
+      <line x1="60" y1="10" x2="60" y2="35" stroke="#D95338" stroke-width="3" />
+      <!-- Content lines -->
+      <line x1="15" y1="24" x2="45" y2="19" stroke="#94A3B8" stroke-width="2" />
+      <line x1="18" y1="32" x2="48" y2="27" stroke="#CBD5E1" stroke-width="2" />
+      <line x1="75" y1="19" x2="105" y2="24" stroke="#94A3B8" stroke-width="2" />
+    </g>
+
+    <!-- 2. Desktop World Globe (Center Right) -->
+    <g transform="translate(260, 10)">
+      <ellipse cx="25" cy="62" rx="14" ry="5" fill="#0F1B3D" />
+      <path d="M25 50 L25 62" stroke="#0F1B3D" stroke-width="3" />
+      <path d="M6 26 A 22 22 0 0 0 44 26" stroke="#FFC857" stroke-width="3" fill="none" />
+      <!-- Globe -->
+      <circle cx="25" cy="24" r="18" fill="#2563EB" />
+      <path d="M16 16 Q24 10 30 18 Q32 28 24 34 Q18 28 16 16 Z" fill="#8FBF5A" />
+      <ellipse cx="25" cy="24" rx="17" ry="6" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="1" fill="none" />
+    </g>
+
+    <!-- 3. Passport & Acceptance Envelope (Left) -->
+    <g transform="translate(90, 48)">
+      <rect x="0" y="0" width="28" height="18" rx="3" fill="#D95338" />
+      <polygon points="0,0 14,10 28,0" fill="#FF6B4A" />
+    </g>
+  </g>
+</svg>

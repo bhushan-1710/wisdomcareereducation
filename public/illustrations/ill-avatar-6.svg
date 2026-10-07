@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" fill="none">
+  <!-- WCE Student Avatar 6 (ill-avatar-6) -->
+  <circle cx="64" cy="64" r="64" fill="#FFFBEB" />
+  <!-- Shoulders / Sage Green shirt -->
+  <path d="M26 128 C26 96 42 88 64 88 C86 88 102 96 102 128 Z" fill="#8FBF5A" />
+  <polygon points="56,88 72,88 64,104" fill="#6B9E38" />
+  <!-- Neck -->
+  <rect x="58" y="72" width="12" height="18" rx="4" fill="#9A5826" />
+  <!-- Head with neat beard silhouette -->
+  <ellipse cx="64" cy="54" rx="22" ry="26" fill="#9A5826" />
+  <!-- Hair: Short neat crop -->
+  <path d="M42 46 C42 26 52 22 64 23 C76 22 86 26 86 46 C86 36 76 32 64 32 C52 32 44 36 42 46 Z" fill="#0F1B3D" />
+  <!-- Beard outline along jaw -->
+  <path d="M43 56 C43 72 52 80 64 80 C76 80 85 72 85 56 C85 68 76 76 64 76 C52 76 43 68 43 56 Z" fill="#0F1B3D" />
+  <!-- Eyes -->
+  <circle cx="56" cy="54" r="2.5" fill="#0F1B3D" />
+  <circle cx="72" cy="54" r="2.5" fill="#0F1B3D" />
+  <!-- Smile -->
+  <path d="M60 64 Q64 67 68 64" stroke="#0F1B3D" stroke-width="2" stroke-linecap="round" fill="none" />
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" fill="none">
+  <!-- WCE Hero Midground Layer (ill-hero-mid) -->
+  <defs>
+    <!-- Window grid patterns -->
+    <pattern id="win-grid" width="12" height="18" patternUnits="userSpaceOnUse">
+      <rect x="2" y="3" width="8" height="12" rx="1.5" fill="#BAE6FD" />
+    </pattern>
+    <pattern id="hotel-grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect x="3" y="3" width="10" height="10" rx="1.5" fill="#FFE4E6" />
+    </pattern>
+  </defs>
+
+  <!-- Midground green hill shelf -->
+  <path d="M0 720 Q480 620 980 660 T1600 680 L1600 900 L0 900 Z" fill="#8FBF5A" />
+
+  <!-- 1. Distant Airport Control Tower (Far right) -->
+  <g transform="translate(1380, 480)">
+    <rect x="28" y="70" width="16" height="130" fill="#CBD5E1" />
+    <!-- Cab -->
+    <polygon points="12,70 60,70 52,38 20,38" fill="#1E356F" />
+    <rect x="22" y="42" width="28" height="12" fill="#BAE6FD" />
+    <!-- Radar radome -->
+    <circle cx="36" cy="26" r="10" fill="#FFFFFF" />
+  </g>
+
+  <!-- 2. Tech / Corporate Office Glass Tower (Right midground) -->
+  <g transform="translate(1120, 390)">
+    <!-- Tower Shadow -->
+    <rect x="18" y="30" width="140" height="290" rx="6" fill="#0F1B3D" fill-opacity="0.12" />
+    <!-- Tower Facade -->
+    <rect x="10" y="20" width="140" height="290" rx="6" fill="#0F1B3D" />
+    <rect x="18" y="30" width="124" height="260" rx="4" fill="#162752" />
+    <rect x="24" y="38" width="112" height="240" fill="url(#win-grid)" />
+    <!-- Angular roof terrace -->
+    <polygon points="10,20 80,0 150,20" fill="#2563EB" />
+  </g>
+
+  <!-- 3. Modern Healthcare / Hospital Center (Center right) -->
+  <g transform="translate(860, 470)">
+    <!-- Main building block -->
+    <rect x="0" y="50" width="180" height="190" rx="6" fill="#F8FAFC" />
+    <rect x="10" y="60" width="160" height="160" fill="url(#win-grid)" />
+    <!-- Red/Coral cross symbol -->
+    <rect x="75" y="14" width="30" height="30" rx="4" fill="#FFFFFF" />
+    <rect x="86" y="19" width="8" height="20" rx="2" fill="#D95338" />
+    <rect x="80" y="25" width="20" height="8" rx="2" fill="#D95338" />
+    <!-- Blue accent canopy -->
+    <path d="M-6 220 L186 220 L176 240 L4 240 Z" fill="#2563EB" />
+  </g>
+
+  <!-- 4. 5-Star Hospitality Hotel (Center left) -->
+  <g transform="translate(560, 430)">
+    <!-- Terracotta roof cornice -->
+    <polygon points="10,40 110,12 210,40" fill="#C4533A" />
+    <!-- Hotel facade -->
+    <rect x="20" y="40" width="180" height="240" rx="4" fill="#FFFBEB" />
+    <rect x="32" y="56" width="156" height="200" fill="url(#hotel-grid)" />
+    <!-- Golden canopy / entrance -->
+    <rect x="70" y="240" width="80" height="40" fill="#0F1B3D" />
+    <polygon points="60,240 160,240 150,230 70,230" fill="#FFC857" />
+  </g>
+
+  <!-- 5. University Campus with Classic Portico & Columns (Left midground) -->
+  <g transform="translate(180, 450)">
+    <!-- Main Hall -->
+    <rect x="30" y="70" width="260" height="200" fill="#FFFFFF" />
+    <!-- Classical Pediment (Triangle) -->
+    <polygon points="20,70 160,10 300,70" fill="#1E356F" />
+    <circle cx="160" cy="48" r="14" fill="#FFC857" />
+    <!-- Colonnade Columns -->
+    <rect x="50" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="90" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="130" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="170" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="210" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="250" y="70" width="18" height="170" fill="#E2E8F0" />
+    <!-- Grand steps -->
+    <rect x="10" y="240" width="300" height="14" fill="#CBD5E1" />
+    <rect x="0" y="254" width="320" height="16" fill="#94A3B8" />
+  </g>
+
+  <!-- Trees along the ridge -->
+  <g fill="#6B9E38">
+    <circle cx="490" cy="670" r="32" />
+    <circle cx="525" cy="660" r="24" />
+    <circle cx="800" cy="690" r="28" />
+    <circle cx="830" cy="680" r="34" />
+    <circle cx="1070" cy="680" r="30" />
+    <circle cx="1320" cy="710" r="36" />
+  </g>
+</svg>

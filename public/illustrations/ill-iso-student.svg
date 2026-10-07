@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480" fill="none">
+  <!-- WCE Program Isometric Tile: Student Internships (ill-iso-student) -->
+  <defs>
+    <filter id="iso-shadow-stud" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#0F1B3D" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- Base Isometric Plinth (Soft Coral / Cream Tint) -->
+  <polygon points="240,80 420,184 240,288 60,184" fill="#FFE9E3" />
+  <polygon points="60,184 240,288 240,320 60,216" fill="#FFC9BE" />
+  <polygon points="240,288 420,184 420,216 240,320" fill="#FFA594" />
+
+  <!-- Isometric Building (Hospitality / Tech Internship Office) -->
+  <g filter="url(#iso-shadow-stud)">
+    <!-- Base -->
+    <polygon points="240,140 340,198 240,256 140,198" fill="#FFFFFF" />
+    <polygon points="140,198 240,256 240,268 140,210" fill="#CBD5E1" />
+    <polygon points="240,256 340,198 340,210 240,268" fill="#94A3B8" />
+
+    <!-- Left Facade (Coral & Terracotta) -->
+    <polygon points="160,184 240,230 240,140 160,94" fill="#D95338" />
+    <!-- Right Facade (Darker Terracotta) -->
+    <polygon points="240,230 320,184 320,94 240,140" fill="#C4533A" />
+    <!-- Modern Angled Roof -->
+    <polygon points="160,94 240,48 320,94 240,140" fill="#FF6B4A" />
+
+    <!-- Glass Windows (Isometric strips) -->
+    <polygon points="175,170 200,184 200,166 175,152" fill="#FFFFFF" fill-opacity="0.9" />
+    <polygon points="208,189 230,202 230,184 208,171" fill="#FFFFFF" fill-opacity="0.9" />
+    <polygon points="175,142 200,156 200,138 175,124" fill="#FFFFFF" fill-opacity="0.9" />
+    <polygon points="208,161 230,174 230,156 208,143" fill="#FFFFFF" fill-opacity="0.9" />
+
+    <polygon points="250,202 272,189 272,171 250,184" fill="#CBD5E1" fill-opacity="0.8" />
+    <polygon points="280,184 305,170 305,152 280,166" fill="#CBD5E1" fill-opacity="0.8" />
+    <polygon points="250,174 272,161 272,143 250,156" fill="#CBD5E1" fill-opacity="0.8" />
+    <polygon points="280,156 305,142 305,124 280,138" fill="#CBD5E1" fill-opacity="0.8" />
+  </g>
+
+  <!-- Modern Isometric Laptop Hovering Foreground Left -->
+  <g transform="translate(70, 150)">
+    <!-- Laptop Base Keyboard Plinth -->
+    <polygon points="60,50 110,79 60,108 10,79" fill="#0F1B3D" />
+    <polygon points="10,79 60,108 60,114 10,85" fill="#162752" />
+    <polygon points="60,108 110,79 110,85 60,114" fill="#1E356F" />
+    <!-- Trackpad & Keyboard surface -->
+    <polygon points="56,60 96,83 60,104 20,81" fill="#1E356F" />
+    <!-- Open Screen (Upright isometric) -->
+    <polygon points="60,50 110,79 110,30 60,1" fill="#2563EB" />
+    <polygon points="64,48 106,73 106,34 64,9" fill="#BAE6FD" />
+    <!-- Code / Data lines on screen -->
+    <line x1="70" y1="22" x2="95" y2="37" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="72" y1="32" x2="100" y2="48" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="74" y1="42" x2="90" y2="52" stroke="#D95338" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Coffee Cup & Notebook Hovering Foreground Right -->
+  <g transform="translate(320, 160)">
+    <!-- Notebook Pages -->
+    <polygon points="40,20 80,43 40,66 0,43" fill="#FFFFFF" />
+    <polygon points="0,43 40,66 40,74 0,51" fill="#CBD5E1" />
+    <polygon points="40,66 80,43 80,51 40,74" fill="#94A3B8" />
+    <!-- Bookmark ribbon -->
+    <polygon points="36,25 44,29 44,48 40,44 36,48" fill="#D95338" />
+
+    <!-- Coffee mug with top-left lighting -->
+    <ellipse cx="65" cy="18" rx="12" ry="7" fill="#0F1B3D" />
+    <ellipse cx="65" cy="17" rx="10" ry="5" fill="#6B4E3D" />
+  </g>
+</svg>

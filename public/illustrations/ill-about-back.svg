@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" width="640" height="560" fill="none">
+  <!-- WCE About Scene Background Layer (ill-about-back) -->
+  <defs>
+    <!-- Organic Blob Clip Path per docs/design.md 4.1 -->
+    <clipPath id="about-blob-clip">
+      <path d="M50 80 C80 20 200 10 320 20 C460 30 580 90 600 220 C620 360 550 490 420 530 C280 570 120 540 60 440 C0 340 20 140 50 80 Z" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#about-blob-clip)">
+    <!-- Soft Pastel Room Wall -->
+    <rect width="640" height="560" fill="#F0F7FF" />
+
+    <!-- Office Window looking outside (Top-Left) -->
+    <g transform="translate(60, 60)">
+      <rect x="0" y="0" width="130" height="170" rx="12" fill="#E0F2FE" />
+      <line x1="65" y1="0" x2="65" y2="170" stroke="#FFFFFF" stroke-width="6" />
+      <line x1="0" y1="85" x2="130" y2="85" stroke="#FFFFFF" stroke-width="6" />
+      <!-- Soft green outdoor tree canopy outside window -->
+      <circle cx="40" cy="120" r="38" fill="#8FBF5A" />
+      <circle cx="85" cy="110" r="32" fill="#6B9E38" />
+      <circle cx="50" cy="90" r="24" fill="#D6EBB5" />
+    </g>
+
+    <!-- World Map Wall Board (Top-Right) -->
+    <g transform="translate(380, 70)">
+      <rect x="0" y="0" width="180" height="120" rx="10" fill="#FFFFFF" />
+      <!-- Minimalist Continents -->
+      <path d="M25 40 Q45 25 65 35 Q75 55 55 65 Q35 55 25 40 Z" fill="#93C5FD" />
+      <path d="M85 45 Q115 35 140 45 Q150 70 125 75 Q95 70 85 45 Z" fill="#93C5FD" />
+      <ellipse cx="90" cy="60" rx="75" ry="35" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3 3" fill="none" />
+      <!-- Destination Pins on Wall Board -->
+      <circle cx="55" cy="48" r="4" fill="#D95338" />
+      <circle cx="120" cy="52" r="4" fill="#FFC857" />
+      <line x1="55" y1="48" x2="120" y2="52" stroke="#D95338" stroke-width="2" stroke-dasharray="3 2" />
+    </g>
+
+    <!-- Floor Plane -->
+    <rect x="0" y="440" width="640" height="120" fill="#E2E8F0" />
+  </g>
+</svg>

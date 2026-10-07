@@ -68,12 +68,12 @@ export function AboutStats({ className = '' }: AboutStatsProps) {
           </div>
 
           {/* Illustration Container with Organic Soft Treatment (Right side) */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 flex justify-center">
             <Reveal delayMs={200} durationMs={750} distance={32}>
-              <div className="relative mx-auto max-w-md rounded-[32px] border border-wce-blue-100 bg-wce-blue-50/60 p-4 shadow-wce-sm sm:p-6 lg:max-w-none">
+              <div className="relative mx-auto max-w-[420px] lg:max-w-none flex items-center justify-center drop-shadow-md">
                 <Illustration
                   id="ill-about"
-                  className="w-full rounded-[24px]"
+                  className="w-full object-contain"
                 />
               </div>
             </Reveal>

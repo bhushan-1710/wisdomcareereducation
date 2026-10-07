@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" fill="none">
+  <!-- WCE Sector Tile: Business & Finance (ill-sector-business) -->
+  <defs>
+    <filter id="biz-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0F1B3D" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- Pastel Rounded Tile Background -->
+  <rect x="12" y="12" width="216" height="216" rx="28" fill="#F0FDF4" />
+
+  <!-- Shadow underneath cluster -->
+  <ellipse cx="120" cy="186" rx="68" ry="14" fill="#0F1B3D" fill-opacity="0.08" />
+
+  <g filter="url(#biz-shadow)">
+    <!-- Financial Bank / Stock Exchange Facade -->
+    <g transform="translate(42, 60)">
+      <!-- Steps -->
+      <rect x="0" y="106" width="156" height="10" rx="3" fill="#94A3B8" />
+      <rect x="8" y="98" width="140" height="8" rx="2" fill="#CBD5E1" />
+      <!-- Building Body -->
+      <rect x="16" y="34" width="124" height="64" fill="#FFFFFF" />
+      <!-- Classical Columns (Navy & Slate) -->
+      <rect x="26" y="34" width="12" height="64" fill="#1E356F" />
+      <rect x="54" y="34" width="12" height="64" fill="#1E356F" />
+      <rect x="90" y="34" width="12" height="64" fill="#1E356F" />
+      <rect x="118" y="34" width="12" height="64" fill="#1E356F" />
+      <!-- Architrave & Pediment Roof -->
+      <rect x="12" y="26" width="132" height="8" fill="#0F1B3D" />
+      <polygon points="6,26 78,0 150,26" fill="#0F1B3D" />
+      <!-- Golden Emblem inside pediment -->
+      <circle cx="78" cy="16" r="6" fill="#FFC857" />
+    </g>
+
+    <!-- Rising Bar Chart & Growth Trend (Foreground Right) -->
+    <g transform="translate(130, 114)">
+      <!-- Chart Bars -->
+      <rect x="0" y="36" width="14" height="30" rx="3" fill="#8FBF5A" />
+      <rect x="18" y="20" width="14" height="46" rx="3" fill="#2563EB" />
+      <rect x="36" y="0" width="14" height="66" rx="3" fill="#D95338" />
+      <!-- Trend Arrow Line -->
+      <path d="M-6 38 L14 24 L32 10 L50 -6" stroke="#FFC857" stroke-width="4" stroke-linecap="round" />
+      <polygon points="46,-12 56,-6 48,0" fill="#FFC857" />
+    </g>
+
+    <!-- Golden Investment Coin (Foreground Left) -->
+    <g transform="translate(48, 140)">
+      <circle cx="16" cy="16" r="16" fill="#F59E0B" />
+      <circle cx="16" cy="16" r="12" fill="#FFC857" />
+      <rect x="14" y="8" width="4" height="16" rx="2" fill="#D97706" />
+    </g>
+  </g>
+</svg>

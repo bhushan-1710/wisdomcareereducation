@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+  <!-- WCE Final CTA Scene: Midground Layer (ill-cta-scene-mid) -->
+  <!-- Rolling midground shelf -->
+  <path d="M0 580 Q480 520 1020 550 T1600 540 L1600 700 L0 700 Z" fill="#0B132B" />
+
+  <!-- Airport Control Tower Silhouette (Right) -->
+  <g transform="translate(1320, 420)">
+    <rect x="22" y="60" width="14" height="90" fill="#1E356F" />
+    <polygon points="10,60 48,60 42,34 16,34" fill="#0F1B3D" />
+    <rect x="18" y="38" width="22" height="8" fill="#FFC857" />
+    <circle cx="29" cy="22" r="7" fill="#FFFFFF" />
+    <circle cx="29" cy="22" r="3" fill="#D95338" />
+  </g>
+
+  <!-- Distant City & Terminal Light Beacons along the ridge -->
+  <g fill="#FFC857">
+    <circle cx="340" cy="565" r="3" />
+    <circle cx="480" cy="555" r="2.5" />
+    <circle cx="620" cy="560" r="3" />
+    <circle cx="780" cy="545" r="3.5" />
+    <circle cx="1120" cy="550" r="3" />
+    <circle cx="1240" cy="540" r="2.5" />
+  </g>
+</svg>

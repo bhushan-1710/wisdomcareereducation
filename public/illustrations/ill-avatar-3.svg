@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" fill="none">
+  <!-- WCE Student Avatar 3 (ill-avatar-3) -->
+  <circle cx="64" cy="64" r="64" fill="#D6EBB5" />
+  <!-- Shoulders / Sky Blue blazer -->
+  <path d="M26 128 C26 96 42 88 64 88 C86 88 102 96 102 128 Z" fill="#2563EB" />
+  <polygon points="56,88 72,88 64,106" fill="#FFFFFF" />
+  <!-- Neck -->
+  <rect x="58" y="72" width="12" height="18" rx="4" fill="#E29578" />
+  <!-- Head -->
+  <ellipse cx="64" cy="54" rx="22" ry="26" fill="#E29578" />
+  <!-- Hair: Bob cut -->
+  <path d="M40 58 C38 34 46 22 64 23 C82 22 90 34 88 58 C84 62 82 46 80 40 C72 35 56 35 48 40 C46 46 44 62 40 58 Z" fill="#0F1B3D" />
+  <!-- Modern Round Specs / Glasses -->
+  <circle cx="55" cy="52" r="7" stroke="#0F1B3D" stroke-width="2" fill="none" />
+  <circle cx="73" cy="52" r="7" stroke="#0F1B3D" stroke-width="2" fill="none" />
+  <line x1="62" y1="52" x2="66" y2="52" stroke="#0F1B3D" stroke-width="2" />
+  <!-- Eyes -->
+  <circle cx="55" cy="52" r="2" fill="#0F1B3D" />
+  <circle cx="73" cy="52" r="2" fill="#0F1B3D" />
+  <!-- Smile -->
+  <path d="M60 65 Q64 69 68 65" stroke="#0F1B3D" stroke-width="2" stroke-linecap="round" fill="none" />
+</svg>

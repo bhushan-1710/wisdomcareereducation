@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+  <!-- WCE Final CTA Master Scene (ill-cta-scene) -->
+  <defs>
+    <linearGradient id="cta-master-sunset" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1B3D" />
+      <stop offset="40%" stop-color="#1E356F" />
+      <stop offset="70%" stop-color="#C03E26" />
+      <stop offset="85%" stop-color="#D95338" />
+      <stop offset="100%" stop-color="#FFC857" />
+    </linearGradient>
+    <radialGradient id="cta-master-sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFEDD5" stop-opacity="1" />
+      <stop offset="50%" stop-color="#FFC857" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#D95338" stop-opacity="0" />
+    </radialGradient>
+    <filter id="cta-master-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#0F1B3D" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- ================= 1. BACK LAYER ================= -->
+  <rect width="1600" height="700" fill="url(#cta-master-sunset)" />
+  <circle cx="960" cy="460" r="160" fill="url(#cta-master-sun)" />
+  <circle cx="960" cy="460" r="54" fill="#FFF7ED" />
+
+  <path d="M0 520 Q360 440 780 470 T1600 450 L1600 700 L0 700 Z" fill="#162752" fill-opacity="0.75" />
+  <path d="M0 560 Q440 490 920 520 T1600 500 L1600 700 L0 700 Z" fill="#0F1B3D" />
+
+  <!-- ================= 2. MID LAYER ================= -->
+  <path d="M0 580 Q480 520 1020 550 T1600 540 L1600 700 L0 700 Z" fill="#0B132B" />
+
+  <!-- Control Tower -->
+  <g transform="translate(1320, 420)">
+    <rect x="22" y="60" width="14" height="90" fill="#1E356F" />
+    <polygon points="10,60 48,60 42,34 16,34" fill="#0F1B3D" />
+    <rect x="18" y="38" width="22" height="8" fill="#FFC857" />
+    <circle cx="29" cy="22" r="7" fill="#FFFFFF" />
+    <circle cx="29" cy="22" r="3" fill="#D95338" />
+  </g>
+
+  <!-- Terminal Lights -->
+  <g fill="#FFC857">
+    <circle cx="340" cy="565" r="3" />
+    <circle cx="480" cy="555" r="2.5" />
+    <circle cx="620" cy="560" r="3" />
+    <circle cx="780" cy="545" r="3.5" />
+    <circle cx="1120" cy="550" r="3" />
+    <circle cx="1240" cy="540" r="2.5" />
+  </g>
+
+  <!-- ================= 3. FRONT LAYER ================= -->
+  <!-- Runway -->
+  <polygon points="420,700 760,540 1080,540 1340,700" fill="#1E293B" />
+  <polygon points="410,700 750,540 760,540 430,700" fill="#D95338" />
+  <polygon points="1330,700 1080,540 1090,540 1350,700" fill="#CBD5E1" />
+
+  <g fill="#FFC857">
+    <polygon points="860,680 900,680 895,640 865,640" />
+    <polygon points="870,620 890,620 887,590 873,590" />
+    <polygon points="875,580 885,580 884,560 876,560" />
+    <circle cx="560" cy="650" r="4.5" />
+    <circle cx="680" cy="595" r="3.5" />
+    <circle cx="1200" cy="650" r="4.5" />
+    <circle cx="1120" cy="595" r="3.5" />
+  </g>
+
+  <!-- Ascending Paper Plane -->
+  <g filter="url(#cta-master-glow)" transform="translate(860, 260) rotate(-22)">
+    <polygon points="70,0 0,95 70,80" fill="#FFFFFF" />
+    <polygon points="70,0 140,95 70,80" fill="#CBD5E1" />
+    <polygon points="70,0 70,80 58,92" fill="#94A3B8" />
+    <polygon points="70,16 80,42 70,36 60,42" fill="#D95338" />
+    <line x1="70" y1="0" x2="70" y2="80" stroke="#FFC857" stroke-width="2" />
+  </g>
+
+  <path d="M780 440 Q840 370 890 320" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="3" stroke-dasharray="6 6" fill="none" />
+</svg>

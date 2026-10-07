@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <!-- WCE Official Favicon -->
+  <rect width="512" height="512" rx="128" fill="#0F1B3D" />
+  <!-- Paper Plane Insignia -->
+  <g transform="translate(256, 256) rotate(-28) translate(-140, -140)">
+    <polygon points="140,20 20,240 140,200" fill="#FFFFFF" />
+    <polygon points="140,20 260,240 140,200" fill="#CBD5E1" />
+    <polygon points="140,20 140,200 120,224" fill="#94A3B8" />
+    <polygon points="140,60 170,120 140,110 110,120" fill="#D95338" />
+  </g>
+</svg>

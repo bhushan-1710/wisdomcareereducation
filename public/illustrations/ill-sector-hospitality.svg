@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" fill="none">
+  <!-- WCE Sector Tile: Hospitality & Catering (ill-sector-hospitality) -->
+  <defs>
+    <filter id="tile-subtle-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0F1B3D" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- Pastel Rounded Tile Background -->
+  <rect x="12" y="12" width="216" height="216" rx="28" fill="#FFF7ED" />
+
+  <!-- Shadow below platter -->
+  <ellipse cx="120" cy="186" rx="72" ry="14" fill="#0F1B3D" fill-opacity="0.08" />
+
+  <g filter="url(#tile-subtle-shadow)">
+    <!-- 1. Serving Tray / Platter Rim -->
+    <ellipse cx="120" cy="174" rx="76" ry="16" fill="#CBD5E1" />
+    <ellipse cx="120" cy="171" rx="70" ry="13" fill="#FFFFFF" />
+
+    <!-- 2. Luxurious Food Service Cloche (Dome) -->
+    <!-- Dome Base Rim -->
+    <ellipse cx="120" cy="164" rx="58" ry="12" fill="#E2E8F0" />
+    <!-- Dome Upper Hemisphere -->
+    <path d="M62 164 C62 108 178 108 178 164 Z" fill="#F8FAFC" />
+    <!-- Top-left lighting highlight on dome -->
+    <path d="M72 160 C74 122 130 116 142 124 C116 118 84 132 80 160 Z" fill="#FFFFFF" />
+    <!-- Dome right shadow tone -->
+    <path d="M140 120 C162 132 176 148 178 164 C164 162 148 152 140 120 Z" fill="#E2E8F0" />
+
+    <!-- Cloche Gold Finial / Handle Knob -->
+    <ellipse cx="120" cy="106" rx="10" ry="8" fill="#F59E0B" />
+    <circle cx="120" cy="102" r="7" fill="#FFC857" />
+    <circle cx="118" cy="100" r="2.5" fill="#FFFFFF" />
+
+    <!-- 3. Chef's Toque Hat Silhouette Hovering Above Dome -->
+    <g transform="translate(144, 44)">
+      <!-- Hat Pleats -->
+      <circle cx="28" cy="24" r="16" fill="#FFFFFF" />
+      <circle cx="14" cy="30" r="13" fill="#FFFFFF" />
+      <circle cx="42" cy="30" r="13" fill="#F1F5F9" />
+      <!-- Hat Band with Coral Trim -->
+      <rect x="10" y="38" width="36" height="16" rx="3" fill="#FFFFFF" />
+      <rect x="10" y="50" width="36" height="4" rx="1" fill="#D95338" />
+    </g>
+
+    <!-- 4. 5-Star Luxury Star Cluster -->
+    <g transform="translate(42, 54)">
+      <polygon points="12,2 15,9 23,10 17,16 19,23 12,19 5,23 7,16 1,10 9,9" fill="#FFC857" />
+      <polygon points="32,8 34,13 40,14 35,19 37,25 32,22 27,25 29,19 24,14 30,13" fill="#FFC857" transform="scale(0.8) translate(14, 0)" />
+      <polygon points="52,14 54,18 59,19 55,23 57,27 52,25 47,27 49,23 45,19 50,18" fill="#FFC857" transform="scale(0.65) translate(46, 20)" />
+    </g>
+  </g>
+</svg>

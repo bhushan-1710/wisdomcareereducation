@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" fill="none">
+  <!-- WCE Journey Step 3: Admission / Offer Letter (ill-step-3) -->
+  <defs>
+    <filter id="icon-step3-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0F1B3D" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Circular background badge -->
+  <circle cx="48" cy="48" r="42" fill="#FEF3C7" />
+
+  <g filter="url(#icon-step3-shadow)">
+    <!-- Document Page with folded corner -->
+    <path d="M26 18 L58 18 L70 30 L70 78 L26 78 Z" fill="#FFFFFF" />
+    <polygon points="58,18 58,30 70,30" fill="#CBD5E1" />
+
+    <!-- University Letterhead Header Strip (Navy) -->
+    <rect x="32" y="24" width="22" height="4" rx="1.5" fill="#0F1B3D" />
+
+    <!-- Text content lines -->
+    <line x1="32" y1="36" x2="62" y2="36" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="32" y1="44" x2="64" y2="44" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" />
+    <line x1="32" y1="52" x2="56" y2="52" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Official Wax Seal with Ribbons (Gold & Coral) -->
+    <g transform="translate(56, 60)">
+      <!-- Ribbons -->
+      <polygon points="4,10 0,22 8,18 16,22 12,10" fill="#D95338" />
+      <!-- Medal Seal Disc -->
+      <circle cx="8" cy="8" r="10" fill="#F59E0B" />
+      <circle cx="8" cy="8" r="7" fill="#FFC857" />
+      <!-- Star inside seal -->
+      <polygon points="8,3 9.5,6.5 13,7 10.5,9.5 11,13 8,11.5 5,13 5.5,9.5 3,7 6.5,6.5" fill="#D97706" />
+    </g>
+  </g>
+</svg>

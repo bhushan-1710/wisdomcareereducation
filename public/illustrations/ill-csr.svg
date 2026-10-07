@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" fill="none">
+  <!-- WCE CSR Master Scene Illustration (ill-csr) -->
+  <defs>
+    <linearGradient id="csr-master-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="60%" stop-color="#F0FDF4" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+    <filter id="csr-master-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0F1B3D" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- ================= 1. BACK LAYER ================= -->
+  <rect width="640" height="480" rx="20" fill="url(#csr-master-sky)" />
+  <circle cx="160" cy="120" r="80" fill="#FFC857" fill-opacity="0.25" />
+  <circle cx="160" cy="120" r="32" fill="#FFC857" />
+
+  <path d="M0 340 Q220 270 420 310 T640 290 L640 480 L0 480 Z" fill="#D6EBB5" />
+  <path d="M0 380 Q240 330 460 360 T640 350 L640 480 L0 480 Z" fill="#8FBF5A" />
+
+  <!-- ================= 2. FRONT LAYER ================= -->
+  <path d="M0 400 Q320 370 640 410 L640 480 L0 480 Z" fill="#6B9E38" />
+
+  <g filter="url(#csr-master-shadow)">
+    <!-- Sapling Tree -->
+    <g transform="translate(300, 260)">
+      <ellipse cx="20" cy="115" rx="46" ry="14" fill="#6B4E3D" />
+      <ellipse cx="20" cy="112" rx="38" ry="10" fill="#8C624A" />
+      <path d="M20 112 Q18 60 20 20" stroke="#0F1B3D" stroke-width="7" stroke-linecap="round" fill="none" />
+      <path d="M20 50 Q-10 30 -5 10 Q15 20 20 50 Z" fill="#8FBF5A" />
+      <path d="M20 35 Q50 20 45 0 Q25 10 20 35 Z" fill="#8FBF5A" />
+      <path d="M20 20 Q10 -15 20 -25 Q30 -15 20 20 Z" fill="#4D7C23" />
+    </g>
+
+    <!-- Student Kneeling -->
+    <g transform="translate(160, 250)">
+      <path d="M40 90 L80 120 L40 120 Z" fill="#0F1B3D" />
+      <path d="M30 40 L65 40 L60 85 L25 85 Z" fill="#D95338" />
+      <path d="M55 45 L95 80 L115 110" stroke="#D95338" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="118" cy="112" r="5" fill="#D4A373" />
+      <rect x="42" y="24" width="8" height="14" rx="3" fill="#D4A373" />
+      <ellipse cx="46" cy="16" rx="13" ry="15" fill="#D4A373" />
+      <path d="M34 12 C34 4 42 2 52 3 C58 4 60 12 58 18 C52 14 48 14 44 14 C36 14 34 18 34 12 Z" fill="#0F1B3D" />
+    </g>
+
+    <!-- Student Standing with Watering Can -->
+    <g transform="translate(420, 240)">
+      <rect x="25" y="85" width="12" height="75" rx="5" fill="#F6EBD0" />
+      <rect x="42" y="85" width="12" height="75" rx="5" fill="#F6EBD0" />
+      <rect x="20" y="38" width="40" height="52" rx="6" fill="#2563EB" />
+      <path d="M24 45 L-10 65 L-40 80" stroke="#2563EB" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="-42" cy="82" r="5.5" fill="#BC6C25" />
+      <rect x="35" y="26" width="9" height="14" rx="3" fill="#BC6C25" />
+      <ellipse cx="40" cy="16" rx="13" ry="15" fill="#BC6C25" />
+      <path d="M28 12 C28 4 36 2 46 3 C52 4 54 12 52 18 C46 14 42 14 38 14 C30 14 28 18 28 12 Z" fill="#0F1B3D" />
+
+      <!-- Watering Can -->
+      <g transform="translate(-85, 80)">
+        <rect x="10" y="10" width="35" height="30" rx="6" fill="#FFC857" />
+        <line x1="10" y1="20" x2="-10" y2="12" stroke="#FFC857" stroke-width="5" stroke-linecap="round" />
+        <circle cx="-12" cy="10" r="5" fill="#F59E0B" />
+        <path d="M45 15 Q60 25 45 35" stroke="#FFC857" stroke-width="4" fill="none" />
+        <circle cx="-25" cy="22" r="2.5" fill="#93C5FD" />
+        <circle cx="-32" cy="32" r="2.5" fill="#93C5FD" />
+      </g>
+    </g>
+
+    <!-- Donated Textbooks Stack -->
+    <g transform="translate(60, 370)">
+      <rect x="0" y="30" width="60" height="12" rx="2" fill="#0F1B3D" />
+      <rect x="4" y="32" width="52" height="8" rx="1" fill="#FFFFFF" />
+      <rect x="4" y="18" width="56" height="12" rx="2" fill="#D95338" />
+      <rect x="8" y="20" width="48" height="8" rx="1" fill="#FFFFFF" />
+      <rect x="10" y="6" width="50" height="12" rx="2" fill="#FFC857" />
+      <rect x="14" y="8" width="42" height="8" rx="1" fill="#FFFFFF" />
+    </g>
+  </g>
+</svg>

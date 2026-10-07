@@ -240,7 +240,7 @@ export default function DevComponentsPage() {
 
               {/* Interactive Card */}
               <Card interactive elevation="sm" className="relative group">
-                <Badge variant="coral" className="mb-4">Work-permit pathway</Badge>
+                <Badge variant="coral" className="mb-4">International career pathway</Badge>
                 <h3 className="text-xl font-bold text-wce-navy-900 mb-2">Interactive Program Card</h3>
                 <p className="text-[15px] text-wce-slate-600 leading-relaxed mb-6">
                   Hovers with an 8px lift, subtle scale and elevation to shadow-wce-float.

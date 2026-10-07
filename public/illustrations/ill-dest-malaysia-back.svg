@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600" fill="none">
+  <!-- WCE Destination Malaysia: Back Layer (ill-dest-malaysia-back) -->
+  <defs>
+    <linearGradient id="my-sky-b" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="60%" stop-color="#F0F7FF" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+  </defs>
+  <rect width="480" height="600" rx="20" fill="url(#my-sky-b)" />
+  <circle cx="240" cy="150" r="110" fill="#FFC857" fill-opacity="0.25" />
+  <circle cx="240" cy="150" r="42" fill="#FFC857" />
+  <path d="M40 440 L80 440 L80 390 L110 390 L110 440 L160 440 L160 360 L200 360 L200 440 L280 440 L280 370 L320 370 L320 440 L370 440 L370 400 L400 400 L400 440 L440 440 L440 500 L40 500 Z" fill="#CBD5E1" />
+</svg>

@@ -18,8 +18,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://wisdomcareereducation.com'),
   title: "Wisdom Career Education | Internships, Study Abroad | Nashik",
   description: "Internships, study abroad and professional development programs from Nashik, with 15+ years of experience. Book a free counselling session.",
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
+  openGraph: {
+    images: [
+      {
+        url: "/og/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Wisdom Career Education",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

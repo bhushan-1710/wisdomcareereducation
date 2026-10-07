@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none">
+  <!-- WCE OpenGraph Image (1200x630) -->
+  <defs>
+    <linearGradient id="og-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F1B3D" />
+      <stop offset="50%" stop-color="#162752" />
+      <stop offset="100%" stop-color="#1E356F" />
+    </linearGradient>
+    <radialGradient id="og-glow" cx="0.8" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#D95338" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#FFC857" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0F1B3D" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="630" fill="url(#og-grad)" />
+  <rect width="1200" height="630" fill="url(#og-glow)" />
+
+  <!-- Dotted Curved Trajectory Line -->
+  <path d="M120 540 C420 460 720 180 1080 160" stroke="#93C5FD" stroke-opacity="0.3" stroke-width="4" stroke-dasharray="8 8" fill="none" />
+
+  <!-- Brand Badge Left -->
+  <g transform="translate(100, 100)">
+    <rect width="56" height="56" rx="28" fill="#FFFFFF" />
+    <g transform="translate(28, 28) rotate(-35) translate(-16, -18)">
+      <polygon points="16,2 2,30 16,25" fill="#0F1B3D" />
+      <polygon points="16,2 30,30 16,25" fill="#1E356F" />
+      <polygon points="16,8 20,16 16,14 12,16" fill="#D95338" />
+    </g>
+    <text x="76" y="38" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" letter-spacing="-0.5">WISDOM CAREER EDUCATION</text>
+  </g>
+
+  <!-- Main Headline -->
+  <text x="100" y="270" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="56" fill="#FFFFFF" letter-spacing="-1">
+    From classrooms to
+  </text>
+  <text x="100" y="340" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="56" fill="#FF6B4A" letter-spacing="-1">
+    global careers.
+  </text>
+
+  <!-- Subheadline -->
+  <text x="100" y="420" font-family="Inter, sans-serif" font-weight="500" font-size="24" fill="#CBD5E1">
+    Internships abroad, university admissions, and verified placements from Nashik.
+  </text>
+
+  <!-- Key Badges Strip Bottom -->
+  <g transform="translate(100, 480)">
+    <rect x="0" y="0" width="180" height="48" rx="24" fill="#FFFFFF" fill-opacity="0.1" />
+    <text x="24" y="30" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#FFFFFF">15+ Years Trust</text>
+
+    <rect x="200" y="0" width="220" height="48" rx="24" fill="#FFFFFF" fill-opacity="0.1" />
+    <text x="224" y="30" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#FFFFFF">100% Visa Assistance</text>
+
+    <rect x="440" y="0" width="200" height="48" rx="24" fill="#FFFFFF" fill-opacity="0.1" />
+    <text x="464" y="30" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#FFFFFF">Top Global Hotels</text>
+  </g>
+
+  <!-- Hero Paper Plane Right -->
+  <g transform="translate(940, 260) rotate(-18)">
+    <polygon points="120,0 0,160 120,135" fill="#FFFFFF" />
+    <polygon points="120,0 240,160 120,135" fill="#CBD5E1" />
+    <polygon points="120,0 120,135 100,155" fill="#94A3B8" />
+    <polygon points="120,25 140,70 120,60 100,70" fill="#D95338" />
+  </g>
+</svg>

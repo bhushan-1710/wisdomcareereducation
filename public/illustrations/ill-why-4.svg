@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" fill="none">
+  <!-- WCE Why Us Badge 4: Support After Placement (ill-why-4) -->
+  <defs>
+    <filter id="why4-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0F1B3D" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Circular Base Badge -->
+  <circle cx="48" cy="48" r="42" fill="#FFF7ED" />
+  <circle cx="48" cy="48" r="37" stroke="#D95338" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="3 3" fill="none" />
+
+  <g filter="url(#why4-shadow)">
+    <!-- Protective Shield (Navy) -->
+    <path d="M48 18 C64 18 72 26 72 38 C72 58 48 76 48 76 C48 76 24 58 24 38 C24 26 32 18 48 18 Z" fill="#0F1B3D" />
+
+    <!-- Protective Umbrella Canopy (Warm Coral) -->
+    <path d="M30 42 C30 30 66 30 66 42 C66 42 61 40 56 42 C51 40 45 40 40 42 C35 40 30 42 30 42 Z" fill="#D95338" />
+    <!-- Umbrella Shaft & Handle -->
+    <path d="M48 42 L48 58 Q48 64 42 64 Q38 64 38 60" stroke="#FFC857" stroke-width="3" fill="none" stroke-linecap="round" />
+    <!-- Umbrella Tip -->
+    <polygon points="46,30 50,30 48,25" fill="#FFC857" />
+
+    <!-- 24/7 Lifeline Pulse Ring (Sage Green) -->
+    <circle cx="62" cy="54" r="9" fill="#8FBF5A" />
+    <!-- Checkmark inside ring -->
+    <path d="M58 54 L61 57 L66 51" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

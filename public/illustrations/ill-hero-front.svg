@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" fill="none">
+  <!-- WCE Hero Foreground Layer (ill-hero-front) -->
+  <defs>
+    <!-- Foreground grass gradient -->
+    <linearGradient id="front-lawn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8FBF5A" />
+      <stop offset="100%" stop-color="#6B9E38" />
+    </linearGradient>
+  </defs>
+
+  <!-- Foreground rolling lawn bank -->
+  <path d="M0 760 Q420 740 820 770 T1600 750 L1600 900 L0 900 Z" fill="url(#front-lawn)" />
+
+  <!-- Diagonal Departure Runway -->
+  <g>
+    <!-- Runway tarmac / paved sand apron -->
+    <polygon points="120,900 680,680 1520,680 1600,900" fill="#F6EBD0" />
+    <!-- Runway shoulder edge bands -->
+    <polygon points="110,900 670,680 690,680 140,900" fill="#C4533A" />
+    <polygon points="1510,680 1590,900 1600,900 1520,680" fill="#CBD5E1" />
+
+    <!-- Dashed Centerline Guide Marks (vanishing towards top right) -->
+    <g fill="#FFFFFF">
+      <polygon points="480,880 540,880 780,770 760,770" />
+      <polygon points="840,750 860,750 970,720 955,720" />
+      <polygon points="1030,710 1045,710 1130,695 1120,695" />
+      <polygon points="1180,690 1192,690 1250,684 1242,684" />
+    </g>
+
+    <!-- Runway taxiway edge marker lights -->
+    <circle cx="240" cy="855" r="5" fill="#FFC857" />
+    <circle cx="420" cy="785" r="4" fill="#FFC857" />
+    <circle cx="600" cy="720" r="3.5" fill="#FFC857" />
+  </g>
+
+  <!-- Foreground Trees & Shrubbery -->
+  <g>
+    <!-- Shrub cluster left -->
+    <circle cx="80" cy="780" r="42" fill="#4D7C23" />
+    <circle cx="120" cy="790" r="34" fill="#6B9E38" />
+    <circle cx="50" cy="800" r="28" fill="#8FBF5A" />
+
+    <!-- Small tree right -->
+    <rect x="1460" y="780" width="10" height="50" rx="3" fill="#0F1B3D" />
+    <circle cx="1465" cy="770" r="46" fill="#4D7C23" />
+    <circle cx="1475" cy="755" r="36" fill="#8FBF5A" />
+  </g>
+
+  <!-- Students in Foreground (Left side, celebrating journey) -->
+  <g transform="translate(180, 680)">
+    <!-- Student 1: Female Student with Rolling Luggage -->
+    <g transform="translate(0, 10)">
+      <!-- Rolling luggage suitcase (Warm Sun Gold) -->
+      <g transform="translate(-45, 80)">
+        <!-- Wheels -->
+        <circle cx="6" cy="116" r="5" fill="#0F1B3D" />
+        <circle cx="44" cy="116" r="5" fill="#0F1B3D" />
+        <!-- Suitcase body -->
+        <rect x="0" y="30" width="50" height="85" rx="8" fill="#FFC857" />
+        <!-- Luggage ribs & handle -->
+        <rect x="6" y="45" width="38" height="6" rx="2" fill="#F59E0B" />
+        <rect x="6" y="65" width="38" height="6" rx="2" fill="#F59E0B" />
+        <rect x="6" y="85" width="38" height="6" rx="2" fill="#F59E0B" />
+        <!-- Telescopic handle -->
+        <rect x="18" y="0" width="4" height="30" fill="#94A3B8" />
+        <rect x="28" y="0" width="4" height="30" fill="#94A3B8" />
+        <rect x="15" y="0" width="20" height="6" rx="2" fill="#0F1B3D" />
+        <!-- Luggage tag -->
+        <polygon points="42,50 48,56 42,62" fill="#D95338" />
+      </g>
+
+      <!-- Student Silhouette (Indian female student, simplified flat vector, no outlines) -->
+      <!-- Legs / navy trousers -->
+      <rect x="22" y="100" width="11" height="95" rx="5" fill="#0F1B3D" />
+      <rect x="37" y="100" width="11" height="95" rx="5" fill="#0F1B3D" />
+      <!-- Shoes -->
+      <ellipse cx="27" cy="195" rx="9" ry="5" fill="#475569" />
+      <ellipse cx="43" cy="195" rx="9" ry="5" fill="#475569" />
+      <!-- Torso / Coral blazer -->
+      <path d="M16 46 L54 46 L50 102 L20 102 Z" fill="#D95338" />
+      <!-- Inner shirt -->
+      <polygon points="32,46 38,46 35,68" fill="#FFFFFF" />
+      <!-- Left arm holding suitcase handle -->
+      <path d="M18 48 L-5 70 L-8 96" stroke="#D95338" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="-8" cy="98" r="5" fill="#D4A373" />
+      <!-- Right arm bent up waving cheerfully -->
+      <path d="M52 48 L68 36 L78 16" stroke="#D95338" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="80" cy="14" r="5.5" fill="#D4A373" />
+      <!-- Head and neck -->
+      <rect x="31" y="34" width="8" height="14" rx="3" fill="#D4A373" />
+      <ellipse cx="35" cy="24" rx="14" ry="17" fill="#D4A373" />
+      <!-- Hair (sleek ponytail / dark hair) -->
+      <path d="M21 20 C21 10 30 6 42 7 C50 8 52 18 51 28 C45 22 41 22 35 22 C26 22 22 28 21 20 Z" fill="#0F1B3D" />
+      <path d="M21 22 Q12 28 14 44 Q18 36 24 30 Z" fill="#0F1B3D" />
+    </g>
+
+    <!-- Student 2: Male Student with Duffel Bag (beside her, pointing forward to the plane) -->
+    <g transform="translate(100, 2)">
+      <!-- Duffel travel bag -->
+      <g transform="translate(60, 110)">
+        <rect x="0" y="0" width="46" height="30" rx="10" fill="#C4533A" />
+        <path d="M8 0 Q23 -14 38 0" stroke="#0F1B3D" stroke-width="3" fill="none" />
+      </g>
+
+      <!-- Legs / Sand chino trousers -->
+      <rect x="18" y="106" width="12" height="98" rx="5" fill="#F6EBD0" />
+      <rect x="36" y="106" width="12" height="98" rx="5" fill="#F6EBD0" />
+      <!-- Shoes -->
+      <ellipse cx="23" cy="204" rx="10" ry="5" fill="#0F1B3D" />
+      <ellipse cx="42" cy="204" rx="10" ry="5" fill="#0F1B3D" />
+      <!-- Torso / Sky Blue polo / overshirt -->
+      <rect x="12" y="48" width="44" height="60" rx="6" fill="#2563EB" />
+      <!-- Left arm carrying duffel -->
+      <path d="M54 52 L68 84 L72 112" stroke="#2563EB" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="73" cy="115" r="5.5" fill="#BC6C25" />
+      <!-- Right arm outstretched pointing toward runway/plane -->
+      <path d="M14 52 L-10 40 L-32 30" stroke="#2563EB" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="-35" cy="28" r="5.5" fill="#BC6C25" />
+      <!-- Head and neck -->
+      <rect x="29" y="36" width="9" height="14" rx="3" fill="#BC6C25" />
+      <ellipse cx="34" cy="24" rx="14" ry="17" fill="#BC6C25" />
+      <!-- Hair -->
+      <path d="M20 20 C20 10 30 7 42 8 C48 9 50 18 48 24 C44 20 38 18 32 18 C26 18 22 22 20 20 Z" fill="#0F1B3D" />
+    </g>
+  </g>
+</svg>

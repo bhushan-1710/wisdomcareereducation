@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" width="360" height="80" fill="none">
+  <!-- WCE Official Vector Logo (wce-logo-light - For dark backgrounds) -->
+  <g transform="translate(12, 12)">
+    <!-- Round emblem -->
+    <rect width="56" height="56" rx="28" fill="#FFFFFF" />
+    <!-- Paper plane mark inside -->
+    <g transform="translate(28, 28) rotate(-35) translate(-16, -18)">
+      <polygon points="16,2 2,30 16,25" fill="#0F1B3D" />
+      <polygon points="16,2 30,30 16,25" fill="#1E356F" />
+      <polygon points="16,8 20,16 16,14 12,16" fill="#D95338" />
+    </g>
+  </g>
+  <!-- Wordmark typography -->
+  <text x="82" y="38" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="24" fill="#FFFFFF" letter-spacing="-0.5">WCE</text>
+  <text x="82" y="56" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#E2E8F0" letter-spacing="1.2">WISDOM CAREER EDUCATION</text>
+</svg>

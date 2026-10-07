@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600" fill="none">
+  <!-- WCE Destination Card Art: France (ill-dest-france) -->
+  <defs>
+    <linearGradient id="fr-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="60%" stop-color="#FDF2F8" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+    <filter id="fr-tower-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#0F1B3D" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Sky Canvas & Afternoon Sun -->
+  <rect width="480" height="600" rx="20" fill="url(#fr-sky)" />
+  <circle cx="160" cy="140" r="90" fill="#FFC857" fill-opacity="0.22" />
+  <circle cx="160" cy="140" r="36" fill="#FFC857" />
+
+  <!-- Soft Parisian Clouds -->
+  <ellipse cx="360" cy="160" rx="60" ry="16" fill="#FFFFFF" fill-opacity="0.8" />
+  <ellipse cx="100" cy="190" rx="50" ry="14" fill="#FFFFFF" fill-opacity="0.8" />
+
+  <!-- Distant Paris Haussmann Rooftops & Mansards (Terracotta & Slate) -->
+  <path d="M0 450 L60 450 L60 410 L100 395 L140 410 L140 450 L200 450 L200 420 L250 420 L250 450 L340 450 L340 415 L380 400 L420 415 L420 450 L480 450 L480 520 L0 520 Z" fill="#CBD5E1" />
+
+  <!-- Iconic Eiffel Tower (Center Landmark) -->
+  <g filter="url(#fr-tower-shadow)" transform="translate(180, 80)">
+    <!-- Spire top & beacon -->
+    <line x1="60" y1="0" x2="60" y2="60" stroke="#0F1B3D" stroke-width="4" stroke-linecap="round" />
+    <circle cx="60" cy="10" r="3" fill="#FFC857" />
+
+    <!-- Top platform -->
+    <rect x="52" y="60" width="16" height="6" rx="2" fill="#1E356F" />
+
+    <!-- Upper column tier -->
+    <polygon points="54,66 66,66 70,160 50,160" fill="#0F1B3D" />
+    <line x1="53" y1="110" x2="67" y2="110" stroke="#CBD5E1" stroke-width="2" />
+
+    <!-- Second platform gallery -->
+    <rect x="42" y="160" width="36" height="10" rx="2" fill="#1E356F" />
+
+    <!-- Mid tier legs -->
+    <polygon points="44,170 52,170 42,270 30,270" fill="#0F1B3D" />
+    <polygon points="68,170 76,170 90,270 78,270" fill="#0F1B3D" />
+    <!-- Truss cross braces mid -->
+    <line x1="48" y1="174" x2="72" y2="230" stroke="#162752" stroke-width="2.5" />
+    <line x1="72" y1="174" x2="48" y2="230" stroke="#162752" stroke-width="2.5" />
+
+    <!-- First platform grand deck -->
+    <rect x="22" y="270" width="76" height="14" rx="3" fill="#1E356F" />
+
+    <!-- Lower splayed base legs -->
+    <polygon points="26,284 38,284 14,400 -2,400" fill="#0F1B3D" />
+    <polygon points="82,284 94,284 122,400 106,400" fill="#0F1B3D" />
+
+    <!-- Grand Base Roman Arch -->
+    <path d="M14 400 C30 330 90 330 106 400" stroke="#0F1B3D" stroke-width="12" fill="none" />
+  </g>
+
+  <!-- Foreground Seine River Embankment & Stone Bridge -->
+  <path d="M0 500 L480 470 L480 600 L0 600 Z" fill="#2563EB" fill-opacity="0.25" />
+  <path d="M0 520 L480 490 L480 600 L0 600 Z" fill="#8FBF5A" />
+
+  <!-- Classical Stone Bridge Arches (Left Foreground) -->
+  <g transform="translate(30, 480)">
+    <rect x="0" y="20" width="220" height="20" rx="4" fill="#E2E8F0" />
+    <path d="M20 40 C35 25 75 25 90 40 Z" fill="#2563EB" fill-opacity="0.4" />
+    <path d="M120 40 C135 25 175 25 190 40 Z" fill="#2563EB" fill-opacity="0.4" />
+  </g>
+
+  <!-- WCE Paper Plane soaring over Eiffel Spire -->
+  <g transform="translate(280, 70) rotate(15)">
+    <polygon points="26,0 0,34 26,28" fill="#FFFFFF" />
+    <polygon points="26,0 52,34 26,28" fill="#CBD5E1" />
+    <polygon points="26,6 30,16 26,14 22,16" fill="#D95338" />
+  </g>
+</svg>

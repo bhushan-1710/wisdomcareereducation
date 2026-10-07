@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64" width="96" height="64" fill="none">
+  <!-- WCE Paper Plane Side View (ill-plane-side) -->
+  <!-- Cast shadow underneath -->
+  <path d="M12 56 L68 46 L38 58 Z" fill="#0F1B3D" fill-opacity="0.16" />
+  
+  <!-- Underbelly fold (darker tone) -->
+  <polygon points="10,44 88,16 34,48" fill="#94A3B8" />
+  
+  <!-- Lower wing fold (slate / sky tone) -->
+  <polygon points="12,42 88,16 46,38" fill="#CBD5E1" />
+  
+  <!-- Main fuselage body (soft sky white) -->
+  <polygon points="8,40 88,16 42,32" fill="#F0F7FF" />
+  
+  <!-- Top wing facet (illuminated white) -->
+  <polygon points="18,34 88,16 54,26" fill="#FFFFFF" />
+  
+  <!-- Brand coral accent on tail fin -->
+  <polygon points="8,40 20,33 16,42" fill="#D95338" />
+  
+  <!-- Subtle center crease line -->
+  <path d="M8 40 L88 16" stroke="#0F1B3D" stroke-opacity="0.12" stroke-width="1" stroke-linecap="round" />
+</svg>

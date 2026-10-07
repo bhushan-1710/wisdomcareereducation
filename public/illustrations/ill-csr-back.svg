@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" fill="none">
+  <!-- WCE CSR Scene: Back Layer (ill-csr-back) -->
+  <defs>
+    <linearGradient id="csr-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="60%" stop-color="#F0FDF4" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="480" rx="20" fill="url(#csr-sky)" />
+  <circle cx="160" cy="120" r="80" fill="#FFC857" fill-opacity="0.25" />
+  <circle cx="160" cy="120" r="32" fill="#FFC857" />
+
+  <!-- Distant green community park hills -->
+  <path d="M0 340 Q220 270 420 310 T640 290 L640 480 L0 480 Z" fill="#D6EBB5" />
+  <path d="M0 380 Q240 330 460 360 T640 350 L640 480 L0 480 Z" fill="#8FBF5A" />
+</svg>

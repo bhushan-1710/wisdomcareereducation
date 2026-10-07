@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+  <!-- WCE Final CTA Scene: Back Layer (ill-cta-scene-back) -->
+  <defs>
+    <linearGradient id="cta-sunset-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1B3D" />
+      <stop offset="40%" stop-color="#1E356F" />
+      <stop offset="70%" stop-color="#C03E26" />
+      <stop offset="85%" stop-color="#D95338" />
+      <stop offset="100%" stop-color="#FFC857" />
+    </linearGradient>
+    <radialGradient id="cta-sun-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFEDD5" stop-opacity="1" />
+      <stop offset="50%" stop-color="#FFC857" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#D95338" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Sunset Sky Canvas -->
+  <rect width="1600" height="700" fill="url(#cta-sunset-sky)" />
+
+  <!-- Glowing Sunset Sun on Horizon -->
+  <circle cx="960" cy="460" r="160" fill="url(#cta-sun-glow)" />
+  <circle cx="960" cy="460" r="54" fill="#FFF7ED" />
+
+  <!-- Distant mountain ridges at twilight -->
+  <path d="M0 520 Q360 440 780 470 T1600 450 L1600 700 L0 700 Z" fill="#162752" fill-opacity="0.75" />
+  <path d="M0 560 Q440 490 920 520 T1600 500 L1600 700 L0 700 Z" fill="#0F1B3D" />
+</svg>

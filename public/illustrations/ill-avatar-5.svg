@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" fill="none">
+  <!-- WCE Student Avatar 5 (ill-avatar-5) -->
+  <circle cx="64" cy="64" r="64" fill="#F0F7FF" />
+  <!-- Shoulders / Terracotta sweater & scarf -->
+  <path d="M26 128 C26 96 42 88 64 88 C86 88 102 96 102 128 Z" fill="#C4533A" />
+  <path d="M48 88 Q64 104 80 88 Q64 94 48 88 Z" fill="#FFC857" />
+  <!-- Neck -->
+  <rect x="58" y="72" width="12" height="18" rx="4" fill="#C58F5E" />
+  <!-- Head -->
+  <ellipse cx="64" cy="54" rx="22" ry="26" fill="#C58F5E" />
+  <!-- Hair: Full curls -->
+  <path d="M40 54 C36 44 38 28 50 22 C58 18 70 18 78 22 C90 28 92 44 88 54 C94 58 92 68 86 70 C86 52 82 40 76 36 C64 32 54 36 46 44 C42 54 42 66 38 68 C34 64 36 56 40 54 Z" fill="#0F1B3D" />
+  <!-- Eyes -->
+  <circle cx="56" cy="54" r="2.5" fill="#0F1B3D" />
+  <circle cx="72" cy="54" r="2.5" fill="#0F1B3D" />
+  <!-- Smile -->
+  <path d="M60 64 Q64 68 68 64" stroke="#0F1B3D" stroke-width="2" stroke-linecap="round" fill="none" />
+</svg>

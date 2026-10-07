@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" fill="none">
+  <!-- WCE Hero Master Scene Illustration (ill-hero) -->
+  <defs>
+    <linearGradient id="hero-sky-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="60%" stop-color="#F0F7FF" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+    <radialGradient id="sun-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFC857" stop-opacity="1" />
+      <stop offset="40%" stop-color="#FFC857" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFC857" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="front-lawn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8FBF5A" />
+      <stop offset="100%" stop-color="#6B9E38" />
+    </linearGradient>
+    <pattern id="win-grid" width="12" height="18" patternUnits="userSpaceOnUse">
+      <rect x="2" y="3" width="8" height="12" rx="1.5" fill="#BAE6FD" />
+    </pattern>
+    <pattern id="hotel-grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect x="3" y="3" width="10" height="10" rx="1.5" fill="#FFE4E6" />
+    </pattern>
+  </defs>
+
+  <!-- ================= 1. BACK LAYER (Sky, Sun, Distant Hills) ================= -->
+  <rect width="1600" height="900" fill="url(#hero-sky-grad)" />
+  <circle cx="280" cy="180" r="140" fill="url(#sun-glow)" />
+  <circle cx="280" cy="180" r="48" fill="#FFC857" />
+
+  <g fill="#FFFFFF" fill-opacity="0.85">
+    <ellipse cx="480" cy="150" rx="110" ry="24" />
+    <ellipse cx="540" cy="140" rx="70" ry="20" />
+    <ellipse cx="1180" cy="200" rx="160" ry="32" />
+    <ellipse cx="1260" cy="180" rx="90" ry="26" />
+    <ellipse cx="880" cy="240" rx="120" ry="22" />
+  </g>
+
+  <path d="M0 640 Q280 500 620 560 T1240 520 T1600 550 L1600 900 L0 900 Z" fill="#D6EBB5" fill-opacity="0.6" />
+  <path d="M0 690 Q340 590 760 630 T1600 610 L1600 900 L0 900 Z" fill="#D6EBB5" />
+
+  <!-- ================= 2. MID LAYER (Campus, Hotel, Clinic, Tech Tower) ================= -->
+  <path d="M0 720 Q480 620 980 660 T1600 680 L1600 900 L0 900 Z" fill="#8FBF5A" />
+
+  <!-- Airport Control Tower -->
+  <g transform="translate(1380, 480)">
+    <rect x="28" y="70" width="16" height="130" fill="#CBD5E1" />
+    <polygon points="12,70 60,70 52,38 20,38" fill="#1E356F" />
+    <rect x="22" y="42" width="28" height="12" fill="#BAE6FD" />
+    <circle cx="36" cy="26" r="10" fill="#FFFFFF" />
+  </g>
+
+  <!-- Corporate Tech Tower -->
+  <g transform="translate(1120, 390)">
+    <rect x="18" y="30" width="140" height="290" rx="6" fill="#0F1B3D" fill-opacity="0.12" />
+    <rect x="10" y="20" width="140" height="290" rx="6" fill="#0F1B3D" />
+    <rect x="18" y="30" width="124" height="260" rx="4" fill="#162752" />
+    <rect x="24" y="38" width="112" height="240" fill="url(#win-grid)" />
+    <polygon points="10,20 80,0 150,20" fill="#2563EB" />
+  </g>
+
+  <!-- Healthcare Center -->
+  <g transform="translate(860, 470)">
+    <rect x="0" y="50" width="180" height="190" rx="6" fill="#F8FAFC" />
+    <rect x="10" y="60" width="160" height="160" fill="url(#win-grid)" />
+    <rect x="75" y="14" width="30" height="30" rx="4" fill="#FFFFFF" />
+    <rect x="86" y="19" width="8" height="20" rx="2" fill="#D95338" />
+    <rect x="80" y="25" width="20" height="8" rx="2" fill="#D95338" />
+    <path d="M-6 220 L186 220 L176 240 L4 240 Z" fill="#2563EB" />
+  </g>
+
+  <!-- 5-Star Hotel -->
+  <g transform="translate(560, 430)">
+    <polygon points="10,40 110,12 210,40" fill="#C4533A" />
+    <rect x="20" y="40" width="180" height="240" rx="4" fill="#FFFBEB" />
+    <rect x="32" y="56" width="156" height="200" fill="url(#hotel-grid)" />
+    <rect x="70" y="240" width="80" height="40" fill="#0F1B3D" />
+    <polygon points="60,240 160,240 150,230 70,230" fill="#FFC857" />
+  </g>
+
+  <!-- University Portico -->
+  <g transform="translate(180, 450)">
+    <rect x="30" y="70" width="260" height="200" fill="#FFFFFF" />
+    <polygon points="20,70 160,10 300,70" fill="#1E356F" />
+    <circle cx="160" cy="48" r="14" fill="#FFC857" />
+    <rect x="50" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="90" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="130" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="170" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="210" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="250" y="70" width="18" height="170" fill="#E2E8F0" />
+    <rect x="10" y="240" width="300" height="14" fill="#CBD5E1" />
+    <rect x="0" y="254" width="320" height="16" fill="#94A3B8" />
+  </g>
+
+  <!-- Ridge foliage -->
+  <g fill="#6B9E38">
+    <circle cx="490" cy="670" r="32" />
+    <circle cx="525" cy="660" r="24" />
+    <circle cx="800" cy="690" r="28" />
+    <circle cx="830" cy="680" r="34" />
+    <circle cx="1070" cy="680" r="30" />
+    <circle cx="1320" cy="710" r="36" />
+  </g>
+
+  <!-- ================= 3. FRONT LAYER (Runway, Lawn, Students) ================= -->
+  <path d="M0 760 Q420 740 820 770 T1600 750 L1600 900 L0 900 Z" fill="url(#front-lawn)" />
+
+  <!-- Diagonal Runway -->
+  <g>
+    <polygon points="120,900 680,680 1520,680 1600,900" fill="#F6EBD0" />
+    <polygon points="110,900 670,680 690,680 140,900" fill="#C4533A" />
+    <polygon points="1510,680 1590,900 1600,900 1520,680" fill="#CBD5E1" />
+    <g fill="#FFFFFF">
+      <polygon points="480,880 540,880 780,770 760,770" />
+      <polygon points="840,750 860,750 970,720 955,720" />
+      <polygon points="1030,710 1045,710 1130,695 1120,695" />
+      <polygon points="1180,690 1192,690 1250,684 1242,684" />
+    </g>
+    <circle cx="240" cy="855" r="5" fill="#FFC857" />
+    <circle cx="420" cy="785" r="4" fill="#FFC857" />
+    <circle cx="600" cy="720" r="3.5" fill="#FFC857" />
+  </g>
+
+  <!-- Shrubbery -->
+  <g>
+    <circle cx="80" cy="780" r="42" fill="#4D7C23" />
+    <circle cx="120" cy="790" r="34" fill="#6B9E38" />
+    <circle cx="50" cy="800" r="28" fill="#8FBF5A" />
+    <rect x="1460" y="780" width="10" height="50" rx="3" fill="#0F1B3D" />
+    <circle cx="1465" cy="770" r="46" fill="#4D7C23" />
+    <circle cx="1475" cy="755" r="36" fill="#8FBF5A" />
+  </g>
+
+  <!-- Foreground Students -->
+  <g transform="translate(180, 680)">
+    <!-- Student 1: Female Student with Luggage -->
+    <g transform="translate(0, 10)">
+      <g transform="translate(-45, 80)">
+        <circle cx="6" cy="116" r="5" fill="#0F1B3D" />
+        <circle cx="44" cy="116" r="5" fill="#0F1B3D" />
+        <rect x="0" y="30" width="50" height="85" rx="8" fill="#FFC857" />
+        <rect x="6" y="45" width="38" height="6" rx="2" fill="#F59E0B" />
+        <rect x="6" y="65" width="38" height="6" rx="2" fill="#F59E0B" />
+        <rect x="6" y="85" width="38" height="6" rx="2" fill="#F59E0B" />
+        <rect x="18" y="0" width="4" height="30" fill="#94A3B8" />
+        <rect x="28" y="0" width="4" height="30" fill="#94A3B8" />
+        <rect x="15" y="0" width="20" height="6" rx="2" fill="#0F1B3D" />
+        <polygon points="42,50 48,56 42,62" fill="#D95338" />
+      </g>
+      <rect x="22" y="100" width="11" height="95" rx="5" fill="#0F1B3D" />
+      <rect x="37" y="100" width="11" height="95" rx="5" fill="#0F1B3D" />
+      <ellipse cx="27" cy="195" rx="9" ry="5" fill="#475569" />
+      <ellipse cx="43" cy="195" rx="9" ry="5" fill="#475569" />
+      <path d="M16 46 L54 46 L50 102 L20 102 Z" fill="#D95338" />
+      <polygon points="32,46 38,46 35,68" fill="#FFFFFF" />
+      <path d="M18 48 L-5 70 L-8 96" stroke="#D95338" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="-8" cy="98" r="5" fill="#D4A373" />
+      <path d="M52 48 L68 36 L78 16" stroke="#D95338" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="80" cy="14" r="5.5" fill="#D4A373" />
+      <rect x="31" y="34" width="8" height="14" rx="3" fill="#D4A373" />
+      <ellipse cx="35" cy="24" rx="14" ry="17" fill="#D4A373" />
+      <path d="M21 20 C21 10 30 6 42 7 C50 8 52 18 51 28 C45 22 41 22 35 22 C26 22 22 28 21 20 Z" fill="#0F1B3D" />
+      <path d="M21 22 Q12 28 14 44 Q18 36 24 30 Z" fill="#0F1B3D" />
+    </g>
+
+    <!-- Student 2: Male Student with Duffel -->
+    <g transform="translate(100, 2)">
+      <g transform="translate(60, 110)">
+        <rect x="0" y="0" width="46" height="30" rx="10" fill="#C4533A" />
+        <path d="M8 0 Q23 -14 38 0" stroke="#0F1B3D" stroke-width="3" fill="none" />
+      </g>
+      <rect x="18" y="106" width="12" height="98" rx="5" fill="#F6EBD0" />
+      <rect x="36" y="106" width="12" height="98" rx="5" fill="#F6EBD0" />
+      <ellipse cx="23" cy="204" rx="10" ry="5" fill="#0F1B3D" />
+      <ellipse cx="42" cy="204" rx="10" ry="5" fill="#0F1B3D" />
+      <rect x="12" y="48" width="44" height="60" rx="6" fill="#2563EB" />
+      <path d="M54 52 L68 84 L72 112" stroke="#2563EB" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="73" cy="115" r="5.5" fill="#BC6C25" />
+      <path d="M14 52 L-10 40 L-32 30" stroke="#2563EB" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="-35" cy="28" r="5.5" fill="#BC6C25" />
+      <rect x="29" y="36" width="9" height="14" rx="3" fill="#BC6C25" />
+      <ellipse cx="34" cy="24" rx="14" ry="17" fill="#BC6C25" />
+      <path d="M20 20 C20 10 30 7 42 8 C48 9 50 18 48 24 C44 20 38 18 32 18 C26 18 22 22 20 20 Z" fill="#0F1B3D" />
+    </g>
+  </g>
+</svg>

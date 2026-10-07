@@ -134,7 +134,7 @@ export function ProgramsBand({ className = '' }: ProgramsBandProps) {
                     <span className="text-sm font-semibold text-wce-navy-900">
                       Explore pathway
                     </span>
-                    <div className="flex h-10 w-10 min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-wce-slate-300 text-wce-navy-900">
+                    <div className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-wce-slate-300 text-wce-navy-900">
                       <ArrowUpRight className="h-4 w-4" />
                     </div>
                   </div>

@@ -65,7 +65,7 @@ export const programs: Program[] = [
     summary:
       'A combined internship and study program that builds professional standing in the host country and may lead to a work permit and/or migration.',
     audience: 'Working professionals and graduates seeking international professional standing',
-    tags: ['Work-permit pathway'],
+    tags: ['International career pathway'],
     inclusions: TBC,
     steps: standardProgramSteps,
     sectorSlugs: allSectorSlugs,

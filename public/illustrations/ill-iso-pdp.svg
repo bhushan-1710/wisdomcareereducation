@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480" fill="none">
+  <!-- WCE Program Isometric Tile: Professional Development (ill-iso-pdp) -->
+  <defs>
+    <filter id="iso-shadow-pdp" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#0F1B3D" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- Base Isometric Plinth (Warm Sand / Sun Gold) -->
+  <polygon points="240,80 420,184 240,288 60,184" fill="#FEF3C7" />
+  <polygon points="60,184 240,288 240,320 60,216" fill="#FDE68A" />
+  <polygon points="240,288 420,184 420,216 240,320" fill="#FCD34D" />
+
+  <!-- Center: International Passport Book (Deep Navy with Gold Emblem) -->
+  <g filter="url(#iso-shadow-pdp)" transform="translate(140, 110)">
+    <!-- Book Cover Spine & Isometric Planes -->
+    <polygon points="100,20 180,66 100,112 20,66" fill="#1E356F" />
+    <polygon points="20,66 100,112 100,132 20,86" fill="#0F1B3D" />
+    <polygon points="100,112 180,66 180,86 100,132" fill="#0B132B" />
+
+    <!-- Gold Emblem on Passport Cover -->
+    <circle cx="100" cy="66" r="22" stroke="#FFC857" stroke-width="2.5" fill="none" />
+    <polygon points="100,52 104,63 115,64 107,71 109,82 100,76 91,82 93,71 85,64 96,63" fill="#FFC857" />
+  </g>
+
+  <!-- World Globe with Pin on Right Side -->
+  <g transform="translate(290, 140)">
+    <!-- Stand -->
+    <ellipse cx="60" cy="110" rx="22" ry="8" fill="#0F1B3D" />
+    <path d="M60 90 L60 110" stroke="#0F1B3D" stroke-width="5" stroke-linecap="round" />
+    <!-- Globe sphere -->
+    <circle cx="60" cy="50" r="38" fill="#2563EB" />
+    <!-- Continents in Sage Green -->
+    <path d="M42 35 Q56 26 68 38 Q74 52 58 66 Q46 56 42 35 Z" fill="#8FBF5A" />
+    <path d="M68 52 Q82 48 86 60 Q78 76 68 68 Z" fill="#8FBF5A" />
+    <ellipse cx="60" cy="50" rx="36" ry="14" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="1.5" fill="none" />
+
+    <!-- Red Destination Pin on Globe -->
+    <g transform="translate(68, 18)">
+      <path d="M8 0 C3.5 0 0 3.5 0 8 C0 14 8 24 8 24 C8 24 16 14 16 8 C16 3.5 12.5 0 8 0 Z" fill="#D95338" />
+      <circle cx="8" cy="8" r="3.5" fill="#FFFFFF" />
+    </g>
+  </g>
+
+  <!-- Professional Credential & Career Progression Cue Hovering Left -->
+  <g transform="translate(55, 145)">
+    <!-- Certificate Plaque / Executive Folio in Navy & White -->
+    <!-- Plaque Outer Mount -->
+    <polygon points="50,15 115,52 65,81 0,44" fill="#0F1B3D" />
+    <polygon points="0,44 65,81 65,91 0,54" fill="#0B132B" />
+    <polygon points="65,81 115,52 115,62 65,91" fill="#1E356F" />
+
+    <!-- Certificate Parchment Face -->
+    <polygon points="50,22 108,55 65,77 7,44" fill="#FFFFFF" />
+
+    <!-- Credential Header Strip in Blue -->
+    <polygon points="40,29 68,45 65,47 37,31" fill="#2563EB" />
+
+    <!-- Credential Text Lines in Isometric Angle -->
+    <line x1="22" y1="46" x2="54" y2="64" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="20" y1="53" x2="48" y2="69" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" />
+    <line x1="25" y1="60" x2="44" y2="71" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Gold Certification Seal & Ribbon -->
+    <circle cx="82" cy="62" r="8.5" fill="#FFC857" />
+    <circle cx="82" cy="62" r="6" stroke="#D97706" stroke-width="1" fill="none" />
+    <polygon points="80,68 77,76 81,74 85,76 82,68" fill="#D95338" />
+
+    <!-- Ascending Career Progression Steps in Foreground -->
+    <!-- Step 1 -->
+    <polygon points="32,92 48,101 32,110 16,101" fill="#F1F5F9" />
+    <polygon points="16,101 32,110 32,118 16,109" fill="#CBD5E1" />
+    <polygon points="32,110 48,101 48,109 32,118" fill="#94A3B8" />
+
+    <!-- Step 2 -->
+    <polygon points="48,82 64,91 48,100 32,91" fill="#F8FAFC" />
+    <polygon points="32,91 48,100 48,114 32,105" fill="#CBD5E1" />
+    <polygon points="48,100 64,91 64,105 48,114" fill="#94A3B8" />
+
+    <!-- Step 3 (Top Step) -->
+    <polygon points="64,72 80,81 64,90 48,81" fill="#FFFFFF" />
+    <polygon points="48,81 64,90 64,110 48,101" fill="#E2E8F0" />
+    <polygon points="64,90 80,81 80,101 64,110" fill="#CBD5E1" />
+
+    <!-- Golden Star of Excellence on Top Step -->
+    <polygon points="64,59 66.5,65 73,65 67.5,69 69.5,75 64,71.5 58.5,75 60.5,69 55,65 61.5,65" fill="#FFC857" />
+  </g>
+</svg>
