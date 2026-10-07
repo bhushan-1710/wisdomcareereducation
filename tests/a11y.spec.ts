@@ -5,7 +5,7 @@ test.describe('Accessibility Audits', () => {
   test('Home page passes axe checks', async ({ page }) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(1200);
+    await page.waitForTimeout(1600);
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag22aa'])

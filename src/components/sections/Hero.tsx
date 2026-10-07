@@ -83,6 +83,20 @@ export function Hero({ className = '', hasVideoStory = false }: HeroProps) {
                 priority
                 className="w-full rounded-[20px] shadow-sm"
               />
+
+              {/* Side-view paper plane taking off in hero illustration per docs/design.md 5.2 */}
+              <div
+                className="pointer-events-none absolute top-4 right-6 sm:top-6 sm:right-10 md:top-8 md:right-14 z-10"
+                aria-hidden="true"
+              >
+                <div className="hero-plane-side-float">
+                  <Illustration
+                    id="ill-plane-side"
+                    className="w-16 h-11 sm:w-20 sm:h-14 md:w-24 md:h-16 drop-shadow-md"
+                    alt="Paper plane side view taking off"
+                  />
+                </div>
+              </div>
             </div>
           </Reveal>
 

@@ -18,6 +18,7 @@ import {
   FaqSection,
   FinalCtaSection,
 } from '@/components/sections';
+import { PlaneRoute } from '@/components/motion/PlaneRoute';
 
 export const metadata: Metadata = {
   title: 'Wisdom Career Education | Internships, Study Abroad | Nashik',
@@ -44,41 +45,47 @@ export default function Home() {
         {/* Section 2: Hero */}
         <Hero />
 
-        {/* Section 3: Trust Strip */}
-        <TrustStrip />
+        {/* Sections 3 through 14: Wrapped in the Journey Route Flight Corridor */}
+        <div id="journey-route-container" className="relative">
+          {/* Signature Step 7 Paper Plane Motion System */}
+          <PlaneRoute containerId="journey-route-container" />
 
-        {/* Section 4: About + 15+ Years Stats */}
-        <AboutStats />
+          {/* Section 3: Trust Strip */}
+          <TrustStrip />
 
-        {/* Section 5: Programs Band */}
-        <ProgramsBand />
+          {/* Section 4: About + 15+ Years Stats */}
+          <AboutStats />
 
-        {/* Section 6: Destinations (Optional) */}
-        <DestinationsSection />
+          {/* Section 5: Programs Band */}
+          <ProgramsBand />
 
-        {/* Section 7: Placement Sectors */}
-        <SectorsSection />
+          {/* Section 6: Destinations (Optional) */}
+          <DestinationsSection />
 
-        {/* Section 8: Spotlight Rows ×2 (Optional) */}
-        <SpotlightSection />
+          {/* Section 7: Placement Sectors */}
+          <SectorsSection />
 
-        {/* Section 9: Journey Stepper */}
-        <JourneySection />
+          {/* Section 8: Spotlight Rows ×2 (Optional) */}
+          <SpotlightSection />
 
-        {/* Section 10: Why WCE */}
-        <WhyWceSection />
+          {/* Section 9: Journey Stepper */}
+          <JourneySection />
 
-        {/* Section 11: Success Stories */}
-        <SuccessStoriesSection />
+          {/* Section 10: Why WCE */}
+          <WhyWceSection />
 
-        {/* Section 12: CSR */}
-        <CsrSection />
+          {/* Section 11: Success Stories */}
+          <SuccessStoriesSection />
 
-        {/* Section 13: FAQ */}
-        <FaqSection />
+          {/* Section 12: CSR */}
+          <CsrSection />
 
-        {/* Section 14: Final CTA + Enquiry Form UI */}
-        <FinalCtaSection />
+          {/* Section 13: FAQ */}
+          <FaqSection />
+
+          {/* Section 14: Final CTA + Enquiry Form UI */}
+          <FinalCtaSection />
+        </div>
       </main>
 
       {/* Section 15: Production Footer */}

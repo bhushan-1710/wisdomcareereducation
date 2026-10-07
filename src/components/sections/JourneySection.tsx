@@ -23,26 +23,46 @@ export function JourneySection() {
       return;
     }
 
+    // Single source of truth listener: receives synchronized milestone events from PlaneRoute
+    const handleJourneyStep = (e: Event) => {
+      const customEvent = e as CustomEvent<{ step: number; progress: number }>;
+      if (customEvent.detail) {
+        setActiveStep(customEvent.detail.step);
+        setLineProgress(Math.min(100, Math.max(0, customEvent.detail.progress * 100)));
+      }
+    };
+
+    window.addEventListener('wce:journey-step', handleJourneyStep);
+
+    // Fallback ScrollTrigger only if not driven by the central route
+    const hasCentralRoute =
+      typeof window !== 'undefined' &&
+      Boolean((window as unknown as { __WCE_CENTRAL_ROUTE__?: boolean }).__WCE_CENTRAL_ROUTE__);
+
+    let ctx: gsap.Context | undefined;
     const section = sectionRef.current;
-    if (!section) return;
 
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: section,
-        start: 'top 65%',
-        end: 'bottom 45%',
-        scrub: 0.5,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          // Calculate step index from 1 to 5
-          const calculatedStep = Math.min(5, Math.max(1, Math.ceil(progress * 5)));
-          setActiveStep(calculatedStep);
-          setLineProgress(Math.min(100, progress * 100));
-        },
-      });
-    }, sectionRef);
+    if (!hasCentralRoute && section) {
+      ctx = gsap.context(() => {
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top 65%',
+          end: 'bottom 45%',
+          scrub: 0.5,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const calculatedStep = Math.min(5, Math.max(1, Math.ceil(progress * 5)));
+            setActiveStep(calculatedStep);
+            setLineProgress(Math.min(100, progress * 100));
+          },
+        });
+      }, sectionRef);
+    }
 
-    return () => ctx.revert();
+    return () => {
+      window.removeEventListener('wce:journey-step', handleJourneyStep);
+      ctx?.revert();
+    };
   }, [prefersReduced]);
 
   return (

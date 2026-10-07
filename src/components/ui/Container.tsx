@@ -18,7 +18,7 @@ export function Container({
 
   return (
     <div
-      className={`mx-auto w-full px-6 md:px-8 ${sizeClass} ${className}`}
+      className={`relative z-10 mx-auto w-full px-6 md:px-8 ${sizeClass} ${className}`}
       {...props}
     >
       {children}

@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-const step = process.env.STEP || 'step-6';
+const step = process.env.STEP || 'step-7';
 
 const keyRoutes = [
   { slug: 'home', path: '/' },

@@ -143,6 +143,20 @@
   top: 16px;
 }
 
+/* Hero Side-View Plane Drift Motion (Step 7 / design.md 5.2) */
+@keyframes heroPlaneSideFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.hero-plane-side-float {
+  animation: heroPlaneSideFloat 4.2s ease-in-out infinite;
+}
+
 /* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -153,4 +167,9 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  .hero-plane-side-float {
+    animation: none !important;
+  }
 }
+
