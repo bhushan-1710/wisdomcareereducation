@@ -27,6 +27,7 @@ export function EnquiryForm({ id = 'enquiry-form', className = '', initialProgra
     destination: '',
     message: '',
     consent: false,
+    website: '',
   });
 
   const validate = () => {
@@ -64,11 +65,58 @@ export function EnquiryForm({ id = 'enquiry-form', className = '', initialProgra
     setErrors({});
     setIsLoading(true);
 
-    // Simulated submission delay for UI verification
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          sourcePage: typeof window !== 'undefined' ? window.location.pathname : '/',
+        }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || !data.ok) {
+        if (data.fieldErrors) {
+          setErrors(data.fieldErrors);
+        } else {
+          setErrors({
+            submit: data.error || 'Failed to submit enquiry. Please try again or reach us via WhatsApp.',
+          });
+        }
+        setIsLoading(false);
+        return;
+      }
+
+      // Track analytics conversion event (Requirement 18)
+      if (typeof window !== 'undefined') {
+        const win = window as unknown as {
+          gtag?: (command: string, action: string, params?: Record<string, unknown>) => void;
+        };
+        if (typeof win.gtag === 'function') {
+          win.gtag('event', 'enquiry_submit', {
+            program: formData.program,
+            destination: formData.destination || 'none',
+          });
+        }
+        window.dispatchEvent(
+          new CustomEvent('wce:analytics', {
+            detail: { event: 'enquiry_submit', program: formData.program },
+          })
+        );
+      }
+
       setIsLoading(false);
       setIsSubmitted(true);
-    }, 600);
+    } catch {
+      setErrors({
+        submit: 'Network connection issue. Please check your internet or connect with us directly via WhatsApp.',
+      });
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -84,6 +132,7 @@ export function EnquiryForm({ id = 'enquiry-form', className = '', initialProgra
             destination: '',
             message: '',
             consent: false,
+            website: '',
           });
         }}
         className={className}
@@ -108,6 +157,31 @@ export function EnquiryForm({ id = 'enquiry-form', className = '', initialProgra
       </div>
 
       <div className="space-y-4">
+        {/* Anti-spam Honeypot field (hidden from screen readers and visual users) */}
+        <div aria-hidden="true" className="sr-only opacity-0 pointer-events-none h-0 w-0 overflow-hidden">
+          <label htmlFor={`${id}-website`}>Leave this field blank</label>
+          <input
+            id={`${id}-website`}
+            type="text"
+            name="website"
+            value={formData.website}
+            onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
+        {/* Global submission error alert */}
+        {errors.submit && (
+          <div
+            role="alert"
+            aria-live="assertive"
+            className="rounded-[12px] bg-rose-50 border border-rose-200 p-3.5 text-xs sm:text-sm text-rose-800 font-medium leading-relaxed"
+          >
+            {errors.submit}
+          </div>
+        )}
+
         {/* Full Name */}
         <Input
           label="Full Name"

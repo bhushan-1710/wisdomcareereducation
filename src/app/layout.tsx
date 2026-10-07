@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "@/styles/globals.css";
+import { generateOrganizationJsonLd } from "@/lib/seo";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -26,8 +27,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const orgJsonLd = generateOrganizationJsonLd();
+
   return (
     <html lang="en" className={`${jakarta.variable} ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+      </head>
       <body className="font-body text-wce-slate-600 bg-wce-blue-50 antialiased selection:bg-wce-coral-100 selection:text-wce-coral-800">
         <a href="#main-content" className="skip-to-content">
           Skip to main content

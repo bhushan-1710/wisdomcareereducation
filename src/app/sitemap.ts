@@ -1,8 +1,9 @@
 import type { MetadataRoute } from 'next';
 import { programs } from '@/content/programs';
+import { destinations } from '@/content/destinations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://wisdomcareereducation.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://wisdomcareereducation.com';
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${baseUrl}`, lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
@@ -25,5 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...programRoutes];
+  const destinationRoutes: MetadataRoute.Sitemap = destinations.map((d) => ({
+    url: `${baseUrl}/destinations/${d.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...programRoutes, ...destinationRoutes];
 }

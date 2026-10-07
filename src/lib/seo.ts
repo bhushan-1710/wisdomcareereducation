@@ -36,3 +36,60 @@ export function constructMetadata({
     },
   };
 }
+
+export function generateOrganizationJsonLd() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://wisdomcareereducation.com';
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: siteConfig.brandName,
+    alternateName: siteConfig.shortName,
+    url: baseUrl,
+    description: 'Internships abroad, university admissions, and career counseling based in Nashik, Maharashtra since 2008.',
+    foundingDate: '2008',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.state,
+      addressCountry: siteConfig.address.country,
+    },
+    sameAs: [
+      siteConfig.socialLinks.linkedin,
+      siteConfig.socialLinks.instagram,
+      siteConfig.socialLinks.facebook,
+    ].filter(Boolean),
+  };
+}
+
+export function generateFaqJsonLd(faqs: Array<{ q: string; a: string | null }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs
+      .filter((item): item is { q: string; a: string } => Boolean(item.a))
+      .map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a,
+        },
+      })),
+  };
+}
+
+export function generateBreadcrumbsJsonLd(items: Array<{ name: string; url: string }>) {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://wisdomcareereducation.com';
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url.startsWith('http') ? item.url : `${baseUrl}${item.url}`,
+    })),
+  };
+}
