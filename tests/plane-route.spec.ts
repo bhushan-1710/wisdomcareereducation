@@ -22,6 +22,11 @@ test.describe('Paper Plane Signature Flight System (Step 7)', () => {
     const routeContainer = page.locator('#journey-route-container');
     await expect(routeContainer).toBeVisible();
 
+    // Master SVG route with ill-route asset tracking
+    const routeSvg = page.locator('svg[data-asset-id="ill-route"]');
+    await expect(routeSvg).toBeVisible();
+    await expect(routeSvg).toHaveAttribute('data-route-source', /^(procedural-fallback|canonical-asset)$/);
+
     // Top-down plane traveler
     const topPlane = page.locator('[data-asset-id="ill-plane-top"]').first();
     await expect(topPlane).toBeVisible();
@@ -97,9 +102,10 @@ test.describe('Paper Plane Signature Flight System (Step 7)', () => {
     const routeContainer = page.locator('#journey-route-container');
     await expect(routeContainer).toBeVisible();
 
-    // All journey steps are fully accessible
+    // All journey steps are fully accessible (either in desktop or mobile layout)
     for (let s = 1; s <= 5; s++) {
-      await expect(page.locator(`[data-journey-step="${s}"]`).first()).toBeVisible();
+      const stepEl = page.locator(`[data-journey-step="${s}"]`).filter({ visible: true });
+      await expect(stepEl).toBeVisible();
     }
   });
 });

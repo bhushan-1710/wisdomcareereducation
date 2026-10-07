@@ -72,6 +72,14 @@ export const PLACED_ASSETS: Record<string, string> = {
   // Empty until assets are delivered and placed in public/illustrations/
 };
 
+/**
+ * Optional inline canonical SVG path string for 'ill-route'.
+ * When populated, or when PLACED_ASSETS['ill-route'] is defined,
+ * PlaneRoute automatically renders the canonical SVG path.
+ */
+export const CANONICAL_ROUTE_DATA: string | null = null;
+
+
 export interface IllustrationProps {
   id: string;
   className?: string;

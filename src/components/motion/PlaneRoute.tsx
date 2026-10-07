@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState, useId } from 'react';
 import { gsap } from '@/lib/gsap';
 import { useReducedMotion } from './useReducedMotion';
-import { Illustration } from '@/components/art/Illustration';
+import { Illustration, PLACED_ASSETS, CANONICAL_ROUTE_DATA } from '@/components/art/Illustration';
 
 export interface PlaneRouteProps {
   containerId?: string;
@@ -72,6 +72,10 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
   const prefersReduced = useReducedMotion();
   const maskId = useId();
 
+  // Canonical ill-route asset resolution
+  const placedRouteUrl = PLACED_ASSETS['ill-route'];
+  const [canonicalPathD, setCanonicalPathD] = useState<string | null>(CANONICAL_ROUTE_DATA);
+
   const [dimensions, setDimensions] = useState<{ width: number; height: number }>({
     width: 1440,
     height: 4800,
@@ -98,6 +102,35 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
   const cloud3Ref = useRef<HTMLDivElement>(null);
 
   const isDesktop = dimensions.width >= 1024;
+
+  // Asynchronously resolve canonical SVG asset path if placed in PLACED_ASSETS
+  useEffect(() => {
+    if (!placedRouteUrl || typeof window === 'undefined') return;
+
+    let isSubscribed = true;
+    fetch(placedRouteUrl)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.text();
+      })
+      .then((svgText) => {
+        if (!isSubscribed) return;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(svgText, 'image/svg+xml');
+        const pathEl = doc.querySelector('path');
+        if (pathEl) {
+          const d = pathEl.getAttribute('d');
+          if (d) setCanonicalPathD(d);
+        }
+      })
+      .catch((err) => {
+        console.warn('PlaneRoute: using procedural fallback for ill-route.', err);
+      });
+
+    return () => {
+      isSubscribed = false;
+    };
+  }, [placedRouteUrl]);
 
   // Measure container dimensions via ResizeObserver
   useEffect(() => {
@@ -133,6 +166,10 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
       resizeObserver.disconnect();
     };
   }, [containerId]);
+
+  const isUsingCanonical = Boolean(canonicalPathD);
+  const desktopPathD = canonicalPathD || buildDesktopRoute(dimensions.width, dimensions.height);
+  const mobilePathD = `M 16,40 L 16,${dimensions.height - 40}`;
 
   // Main Motion Engine: Single central ScrollTrigger driving MotionPath + Progressive Reveal
   useEffect(() => {
@@ -377,10 +414,7 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
     return () => {
       ctx.revert();
     };
-  }, [containerId, dimensions, isDesktop, prefersReduced]);
-
-  const desktopPathD = buildDesktopRoute(dimensions.width, dimensions.height);
-  const mobilePathD = `M 16,40 L 16,${dimensions.height - 40}`;
+  }, [containerId, dimensions, isDesktop, prefersReduced, desktopPathD]);
 
   return (
     <>
@@ -398,6 +432,8 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
             height={dimensions.height}
             viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
             fill="none"
+            data-asset-id="ill-route"
+            data-route-source={isUsingCanonical ? 'canonical-asset' : 'procedural-fallback'}
           >
             <defs>
               {/* Progressive Reveal Mask */}
@@ -606,6 +642,12 @@ export function PlaneRoute({ containerId = 'journey-route-container' }: PlaneRou
               <div>
                 Mode:{' '}
                 <span className="text-amber-300 uppercase">{debugState.mode}</span>
+              </div>
+              <div>
+                Route Source:{' '}
+                <span className={isUsingCanonical ? 'text-emerald-300 font-bold' : 'text-amber-300'}>
+                  {isUsingCanonical ? 'CANONICAL (ill-route)' : 'PROCEDURAL FALLBACK'}
+                </span>
               </div>
               <div>
                 Reduced Motion:{' '}
